@@ -4,5 +4,6 @@ export let config = {
     openWeatherKey: 'f36a2ddc5e33d14d3708b92f20f1d315',
     lat: '51.5206777',
     lon: '-0.7401434',
+    mapId: '15019cba5d15b2ed',
     location: 'Thieves Garden'
 }
