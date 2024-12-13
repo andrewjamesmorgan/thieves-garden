@@ -19,7 +19,7 @@ function generateCalendarData(years) {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  return years.flatMap(year => {
+  return years.map(year => {
     const today = new Date();
     if (year >= today.getFullYear()) {
       const months = [];
@@ -76,6 +76,18 @@ function generateCalendarData(years) {
 
 export default function Calendar() {
   const [calendarData, setCalendarData] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateDeviceWidth = () => {
+      setIsMobile(window.innerWidth <= 768); // Example breakpoint for mobile
+    };
+
+    updateDeviceWidth(); // Initial check
+    window.addEventListener('resize', updateDeviceWidth); // Update on resize
+
+    return () => window.removeEventListener('resize', updateDeviceWidth); // Cleanup
+  }, []);
 
   useEffect(() => {
       const years = config.calendarYears;
@@ -86,6 +98,14 @@ export default function Calendar() {
   }, []);
   
   return(
-    <CalendarFull calendar={calendarData} />
+    <div>
+      {isMobile ? (
+        <h2>This is mobile</h2>
+      ) : (
+        <div style={{ width: '100%' }}>
+          <CalendarFull calendar={calendarData} />
+        </div>
+      )}
+    </div>
   )
 }
