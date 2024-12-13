@@ -434,6 +434,75 @@ a:hover {
   color: var(--light-highlight); 
 }
 
+
+/*  */
+
+.year-full-container {
+  display: flex;
+  justify-content: center; /* Centers the table horizontally */
+  align-items: flex-start; /* Ensures content stays at the top */
+  width: 100%;
+  padding: 40px; /* Adds space around the table */
+  box-sizing: border-box; /* Ensures padding doesn't affect the container size */
+}
+
+.calendar-table {
+  border-collapse: collapse; /* Ensures no gaps between table cells */
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  width: auto;
+}
+
+.calendar-table th,
+.calendar-table td {
+  padding: 10px;
+  font-size: 0.8em;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.month-name {
+  font-weight: bold;
+  text-align: left;
+  width: 150px; /* Ensures "September" fits comfortably */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.day-header {
+  font-weight: bold;
+  max-width: 50px;
+  min-width: 30px;
+}
+
+.day-cell {
+  max-width: 30px;
+  min-width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.day-cell.available {
+  background-color: #ccffcc;
+}
+
+.day-cell.booked {
+  background-color: #ffcccc;
+}
+
+.day-cell.tentative {
+  background-color: #ffffcc;
+}
+
+.day-cell.filler {
+  background-color: #f0f0f0;
+  color: #aaa;
+}
+
+
+
+
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   

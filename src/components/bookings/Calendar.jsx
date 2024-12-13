@@ -80,10 +80,10 @@ export default function Calendar() {
 
   useEffect(() => {
     const updateDeviceWidth = () => {
-      setIsMobile(window.innerWidth <= 768); // Example breakpoint for mobile
+      setIsMobile(window.innerWidth <= 1400); 
     };
 
-    updateDeviceWidth(); // Initial check
+    updateDeviceWidth();
     window.addEventListener('resize', updateDeviceWidth); // Update on resize
 
     return () => window.removeEventListener('resize', updateDeviceWidth); // Cleanup
@@ -102,9 +102,7 @@ export default function Calendar() {
       {isMobile ? (
         <h2>This is mobile</h2>
       ) : (
-        <div style={{ width: '100%' }}>
           <CalendarFull calendar={calendarData} />
-        </div>
       )}
     </div>
   )
