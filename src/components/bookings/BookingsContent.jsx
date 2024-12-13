@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import {groupedBookingData} from '../../data/groupedBookingData';
-import Year from "./Year";
 import BookingsIntro from "./BookingsIntro";
 import BookingsForm from "./BookingsForm";
 
@@ -20,13 +18,6 @@ export default function BookingsContent() {
   return (
     <div className='space-above'>
       <BookingsIntro />
-      {/* {groupedBookingData.map((year, index) => (
-        <Year
-          key={index} 
-          year={year} 
-          onSelect={includeInList} 
-        />
-      ))} */}
       <div className="container">
         <BookingsForm weeks={weeksToBook}/>
       </div>
