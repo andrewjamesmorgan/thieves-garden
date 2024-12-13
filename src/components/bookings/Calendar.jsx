@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CalendarFull from './CalendarFull';
+import CalendarMobile from './CalendarMobile';
 import { config } from '../../config';
 import { bookingData } from '../../data/bookingData';
 
@@ -100,7 +101,7 @@ export default function Calendar() {
   return(
     <div>
       {isMobile ? (
-        <h2>This is mobile</h2>
+          <CalendarMobile calendar={calendarData} />
       ) : (
           <CalendarFull calendar={calendarData} />
       )}
