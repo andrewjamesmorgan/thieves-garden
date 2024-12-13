@@ -1,100 +1,30 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useForm } from 'react-hook-form';
-import { UserContext } from '../../App';
-import { config } from '../../config';
-import { bookingData } from '../../data/bookingData';
-
-function checkBooking(date) {
-  let status = 'available';
-  bookingData.forEach ((booking) => {
-    if (date >= booking.startDate && date < booking.endDate) {
-      status = booking.status;
-    }
-  });
-  return status;
-}
-
-function generateCalendarData(years) {
-  const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-
-  return years.flatMap(year => {
-    const today = new Date();
-    if (year >= today.getFullYear()) {
-      const months = [];
-      
-      for (let month = 0; month < 12; month++) {
-        if (year > today.getFullYear() || 
-            (year === today.getFullYear() && month >= today.getMonth())) {
-          const days = [];
-          const date = new Date(year, month, 1);
-
-          // Add filler days for the first week
-          for (let fillerDay = date.getDay(); fillerDay > 0; fillerDay--) {
-            days.push({
-              dayOfMonth: 1 - fillerDay,
-              status: "filler"
-            });
-          }
-
-          // Add actual days of the month
-          while (date.getMonth() === month) {
-            days.push({
-              dayOfMonth: date.getDate(),
-              dayOfWeek: date.getDay(),
-              status: checkBooking(date),
-            });
-            date.setDate(date.getDate() + 1);
-          }
-
-          // Add filler days for the last week
-          for (let fillerDay = days.length; fillerDay < 37; fillerDay++) {
-            days.push({
-              dayOfMonth: fillerDay + 1,
-              status: "filler"
-            });
-          }
-
-          // Add the month object with its name and days
-          months.push({
-            monthName: monthNames[month],
-            days
-          });
-        }
-      }
-
-      return {
-        year,
-        months
-      };
-    }
-  }).filter(Boolean); // Remove any undefined values (years before the current year)
-}
+// import React, { useState, useEffect, useContext } from 'react';
+// import { useForm } from 'react-hook-form';
+// import { UserContext } from '../../App';
+// import { config } from '../../config';
 
 export default function BookingsForm(weeks) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-    reset,
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors, isSubmitting, isSubmitSuccessful },
+  //   reset,
+  // } = useForm();
   
-  const { language } = useContext(UserContext);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [calendarData, setCalendarData] = useState([]);
+  // const { language } = useContext(UserContext);
+  // const [errorMessage, setErrorMessage] = useState(null);
+  // const [calendarData, setCalendarData] = useState([]);
 
-  useEffect(() => {
-      const years = config.calendarYears;
-      console.log("Running useEffect");
-      const data = generateCalendarData(years);
-      console.log("Generated YearData");
-      setCalendarData(data);
-  }, []);
+  // useEffect(() => {
+  //     const years = config.calendarYears;
+  //     console.log("Running useEffect");
+  //     const data = generateCalendarData(years);
+  //     console.log("Generated YearData");
+  //     setCalendarData(data);
+  // }, []);
   
   return(
-    <h2>Calendar goes here</h2>
+    <h2>Form goes here</h2>
   )
 
   // const onSubmit = async (data) => {
