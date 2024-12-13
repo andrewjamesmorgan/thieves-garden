@@ -5,5 +5,6 @@ export let config = {
     lat: 51.5206777,
     lon: -0.7401434,
     mapId: '15019cba5d15b2ed',
-    location: 'Thieves Garden'
+    location: 'Thieves Garden',
+    calendarYears: [2024, 2025]
 }

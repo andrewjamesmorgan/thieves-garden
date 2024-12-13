@@ -20,13 +20,13 @@ export default function BookingsContent() {
   return (
     <div className='space-above'>
       <BookingsIntro />
-      {groupedBookingData.map((year, index) => (
+      {/* {groupedBookingData.map((year, index) => (
         <Year
           key={index} 
           year={year} 
           onSelect={includeInList} 
         />
-      ))}
+      ))} */}
       <div className="container">
         <BookingsForm weeks={weeksToBook}/>
       </div>
