@@ -21,38 +21,40 @@ export default function YearMobile({ year }) {
   return (
     <div className="year-mobile-container">
       <h3 className="year">{year.year}</h3>
-      {year.months.map((month, monthIndex) => {
-        const weeks = getWeeks(month.days);
+      <div className='calendar-grid'>
+        {year.months.map((month, monthIndex) => {
+          const weeks = getWeeks(month.days);
 
-        return (
-          <div key={monthIndex} className="month-container">
-            <h4 className="month-title">{month.monthName}</h4>
-            <table className="month-table">
-              <thead>
-                <tr>
-                  {weekdays.map((day, index) => (
-                    <th key={index} className="day-header">{day}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {weeks.map((week, weekIndex) => (
-                  <tr key={weekIndex}>
-                    {week.map((day, dayIndex) => (
-                      <td
-                        key={dayIndex}
-                        className={`day-cell ${day.status}`}
-                      >
-                        {day.status !== 'filler' ? day.dayOfMonth : ''}
-                      </td>
+          return (
+            <div key={monthIndex} className="month-container">
+              <h4 className="month-title">{month.monthName}</h4>
+              <table className="month-table">
+                <thead>
+                  <tr>
+                    {weekdays.map((day, index) => (
+                      <th key={index} className="day-header">{day}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        );
-      })}
+                </thead>
+                <tbody>
+                  {weeks.map((week, weekIndex) => (
+                    <tr key={weekIndex}>
+                      {week.map((day, dayIndex) => (
+                        <td
+                          key={dayIndex}
+                          className={`day-cell ${day.status}`}
+                        >
+                          {day.status !== 'filler' ? day.dayOfMonth : ''}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        })}
+        </div>
     </div>
   );
 }
