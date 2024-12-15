@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { UserContext } from '../../App';
 import { config } from '../../config';
 
 export default function ContactForm() {
@@ -11,7 +10,6 @@ export default function ContactForm() {
     reset,
   } = useForm();
 
-  const { language } = useContext(UserContext);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const onSubmit = async (data) => {
@@ -25,12 +23,9 @@ export default function ContactForm() {
     });
 
     let object = Object.fromEntries(formData);
-    object.subject = `Contact from ${object.name ? object.name : "unknown"} for Oléron Villa`;
-    object.redirect = "https://www.oleronvilla.com/";
+    object.subject = `Contact from ${object.name ? object.name : "unknown"} for Thieves Garden`;
+    object.redirect = "https://www.thievesgarden.co.uk/";
     const json = JSON.stringify(object);
-
-    console.log(`Submit`);
-    console.log(`language: ${language}`);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -45,17 +40,17 @@ export default function ContactForm() {
       if (res.ok && result.success) {
         reset(); // Reset the form on success
       } else {
-        setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${result.message}`);
+        setErrorMessage(`Failed to send message: ${result.message}`);
       }
     } catch (error) {
-      setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${error.message}`);
+      setErrorMessage(`Failed to send message: ${error.message}`);
     }
   };
 
   return (
     <div className="container">
       {isSubmitSuccessful && !errorMessage ? (
-        <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
+        <h2 className="text-success">Message sent!</h2>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
           <div className="responsive-form">
@@ -67,10 +62,10 @@ export default function ContactForm() {
                 type="email"
                 className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                 {...register('email', {
-                  required: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
+                  required: "Email address required",
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
+                    message: "Email address required",
                   },
                 })}
               />
@@ -78,7 +73,7 @@ export default function ContactForm() {
             </div>
             {/* Optional Phone Number Field */}
             <div className="mb-3 med-field">
-              <label htmlFor="phone" className="form-label">{language === "fr" ? "Numéro de téléphone (facultatif)" : "Phone number (optional)"}</label>
+              <label htmlFor="phone" className="form-label">Phone number (optional)</label>
               <input
                 id="phone"
                 type="tel"
@@ -86,7 +81,7 @@ export default function ContactForm() {
                 {...register('phone', {
                   pattern: {
                     value: /^\+?[0-9]{7,15}$/,
-                    message: `${language === "fr" ? "Veuillez entrer un numéro de téléphone valide" : "Phone number needs to be in a valid form"}`,
+                    message: "Phone number needs to be in a valid form",
                   },
                 })}
               />
@@ -94,12 +89,12 @@ export default function ContactForm() {
             </div>
             {/* Name Field */}
             <div className="mb-3 med-field">
-              <label htmlFor="name" className="form-label">{language === "fr" ? "Nom" : "Name"}</label>
+              <label htmlFor="name" className="form-label">Name</label>
               <input
                 id="name"
                 type="text"
                 className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                {...register('name', { required: `${language === "fr" ? "Veuillez entrer votre nom" : "Please enter a name"}` })}
+                {...register('name', { required: "Please enter a name" })}
               />
               {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
             </div>
@@ -111,16 +106,13 @@ export default function ContactForm() {
               id="message"
               rows={5}
               className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-              {...register('message', { required: `${language === "fr" ? "Veuillez entrer un message" : "Please enter a message"}`})}
+              {...register('message', { required: "Please enter a message"})}
             />
             {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
           </div>
           {/* Submit Button */}
           <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-            {isSubmitting ? 
-              language === "fr" ? "Envoi en cours..." : "Sending..." :
-              language === "fr" ? "Envoyer" : "Send"
-            }
+            {isSubmitting ? "Sending..." : "Send"}
           </button>
           {errorMessage && <div className='error-message'>{errorMessage}</div>}
         </form>
