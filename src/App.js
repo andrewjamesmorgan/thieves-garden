@@ -6,6 +6,7 @@ import Layout from './pages/Layout';
 import Home from './pages/Home';
 import InsideHouse from './pages/InsideHouse';
 import OutsideHouse from './pages/OutsideHouse';
+import Prices from './pages/Prices';
 import Bookings from './pages/Bookings';
 import Contact from './pages/Contact';
 import Facilities from './pages/Facilities';
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="bookings" element={<Bookings />} />
+            <Route path="prices" element={<Prices />} />
             <Route path="contact" element={<Contact />} />
             <Route path="inside_house" element={<InsideHouse />} />
             <Route path="outside_house" element={<OutsideHouse />} />

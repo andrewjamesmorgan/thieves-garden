@@ -27,16 +27,19 @@ export default function Header() {
           className={pathName === "/home" || pathName === "/" ? "active" : "not-active"}>Home</Link>
         <Link to="/inside_house"
           onClick={hideBurgerMenu}
-          className={pathName === "/inside_house" ? "active" : "not-active"}>Inside house</Link>
+          className={pathName === "/inside_house" ? "active" : "not-active"}>Inside apartment</Link>
         <Link to="/outside_house"
           onClick={hideBurgerMenu}
-          className={pathName === "/outside_house" ? "active" : "not-active"}>Outside house</Link>
+          className={pathName === "/outside_house" ? "active" : "not-active"}>Outside apartment</Link>
         <Link to="/facilities"
           onClick={hideBurgerMenu}
           className={pathName === "/facilities" ? "active" : "not-active"}>Facilities</Link>
         <Link to="/location"
           onClick={hideBurgerMenu}
           className={pathName === "/location" ? "active" : "not-active"}>Location</Link>
+        <Link to="/prices"
+          onClick={hideBurgerMenu}
+          className={pathName === "/prices" ? "active" : "not-active"}>Prices</Link>
         <Link to="/bookings"
           onClick={hideBurgerMenu}
           className={pathName === "/bookings" ? "active" : "not-active"}>Bookings</Link>

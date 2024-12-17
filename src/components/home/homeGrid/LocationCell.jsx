@@ -7,7 +7,7 @@ export default function LocationCell({ action }) {
       <p>See where Thieves Garden and Maidenhead are located.</p>
       <p>
         There are plenty of facilities close to the apartment, and Maidenhead
-        station and town center are less than 20 minutes away.
+        station and town center are less than 20 minutes walk.
       </p>
     </>
   );

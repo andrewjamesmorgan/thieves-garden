@@ -500,6 +500,39 @@ a:hover {
   color: #aaa;
 }
 
+div.left-content {
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+table.price-table {
+  width: 600px;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 20px;
+  font-size: 1.2em;
+}
+
+table.price-table thead {
+  color: var(--dark);
+  background-color: var(--light-two);
+}
+
+table.price-table th,
+table.price-table td {
+  padding: 10px;
+}
+
+table.price-table tbody {
+  color: var(--white);
+  background-color: var(--dark-highlight);
+}
+
+/* table.price-table > * {
+  color: green;
+} */
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
