@@ -24,7 +24,7 @@ export default function InfoBox2({ imageSrc, alt, action, route, body }) {
         action={imageClicked}
       />
       <div
-        className="info-text"
+        className={route ? "info-text" : "info-text-no-link"}
         onClick={openRoute}
       >
         {body} {/* Directly render JSX */}

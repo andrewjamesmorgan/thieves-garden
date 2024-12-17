@@ -1,7 +1,7 @@
 import LoungeCell from './insideGrid/LoungeCell';
+import BedroomCell from './insideGrid/BedroomCell';
 import KitchenCell from './insideGrid/KitchenCell';
 import BathroomCell from './insideGrid/BathroomCell';
-import MasterBedroomCell from './insideGrid/MasterBedroomCell';
 import GuestBedroomCell from './insideGrid/GuestBedroomCell';
 import FrontBedroomCell from './insideGrid/FrontBedroomCell';
 import RedBedroomCell from './insideGrid/RedBedroomCell';
@@ -12,12 +12,12 @@ export default function InsideGrid({action}) {
   return (
     <>
     <div className='responsive-grid'>
-      <LoungeCell action={action} />
-      <KitchenCell action={action} />
-      <BathroomCell action={action} />
+    <LoungeCell action={action} />
+    <BedroomCell action={action} />
+    <KitchenCell action={action} />
     </div>
     <div className='responsive-grid'>
-      <MasterBedroomCell action={action} />
+      <BathroomCell action={action} />
       <GuestBedroomCell action={action} />
       <FrontBedroomCell action={action} />
     </div>
