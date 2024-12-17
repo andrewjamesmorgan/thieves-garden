@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
-import InfoBox from '../../InfoBox';
+import InfoBox from '../../InfoBoxOld';
 
 export default function LoungeCell({action}) {
   const { language } = useContext(UserContext);

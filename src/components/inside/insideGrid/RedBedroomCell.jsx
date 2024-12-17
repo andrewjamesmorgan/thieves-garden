@@ -1,7 +1,7 @@
 
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
-import InfoBox from '../../InfoBox';
+import InfoBox from '../../InfoBoxOld';
 
 export default function RedBedroomCell({action}) {
   const { language } = useContext(UserContext);

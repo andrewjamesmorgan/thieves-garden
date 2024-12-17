@@ -1,4 +1,4 @@
-import InfoBox from '../../InfoBox';
+import InfoBox from '../../InfoBoxOld';
 
 export default function BookingCell({action}) {
 
