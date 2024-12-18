@@ -25,12 +25,12 @@ export default function Header() {
         <Link to="/" 
           onClick={hideBurgerMenu}
           className={pathName === "/home" || pathName === "/" ? "active" : "not-active"}>Home</Link>
-        <Link to="/inside_house"
+        <Link to="/inside_apartment"
           onClick={hideBurgerMenu}
-          className={pathName === "/inside_house" ? "active" : "not-active"}>Inside apartment</Link>
-        <Link to="/outside_house"
+          className={pathName === "/inside_apartment" ? "active" : "not-active"}>Inside apartment</Link>
+        <Link to="/outside_apartment"
           onClick={hideBurgerMenu}
-          className={pathName === "/outside_house" ? "active" : "not-active"}>Outside apartment</Link>
+          className={pathName === "/outside_apartment" ? "active" : "not-active"}>Outside apartment</Link>
         <Link to="/facilities"
           onClick={hideBurgerMenu}
           className={pathName === "/facilities" ? "active" : "not-active"}>Facilities</Link>

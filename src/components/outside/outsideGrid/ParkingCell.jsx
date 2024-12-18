@@ -1,28 +1,19 @@
-import { useContext } from 'react';
-import { UserContext } from '../../../App';
-import InfoBox from '../../InfoBoxOld';
+import InfoBox from '../../InfoBox';
 
 export default function ParkingCell({action}) {
-  const { language } = useContext(UserContext);
 
-  const englishAlt = 'Parking spaces outside the house';
-  const english = `
+  const body = (<>
     <h3>Parking</h3>
-    <p>There's plenty of private parking. You can lock the gate for extra security.</p>
-  `;
-  
-  const frenchAlt = "Places de parking à l'extérieur de la maison";
-  const french = `
-    <h3>Parking</h3>
-    <p>Il y a beaucoup de parking privé. Vous pouvez verrouiller le portail pour plus de sécurité.</p>
-  `;
+    <p>There is plenty of un-restricted, free on-street parking (no yellow lines).</p>
+    <p>Areas with a yellow line should be parked on from 7:00 to 9:00 on weekday mornings.</p>
+  </>);
 
   return (
     <InfoBox 
-        imageSrc="../../images/outside/oleron_parking_1600.jpg"
-        alt={language === "fr" ? frenchAlt : englishAlt}
+        imageSrc="../../images/outside/maidenhead-parking.jpeg"
+        alt="Wide, tree-lined street with lots of free parking spaces on either side."
         action={action}
-        body={language === "fr" ? french : english}
+        body={body}
     />
   );
 }
