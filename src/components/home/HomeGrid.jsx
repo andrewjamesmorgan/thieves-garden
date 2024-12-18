@@ -1,5 +1,5 @@
-import InsideHouseCell from './homeGrid/InsideHouseCell';
-import OutsideHouseCell from './homeGrid/OutsideHouseCell';
+import InsideApartmentCell from './homeGrid/InsideApartmentCell';
+import OutsideApartmentCell from './homeGrid/OutsideApartmentCell';
 import LocationCell from './homeGrid/LocationCell';
 import FacilitiesCell from './homeGrid/FacilitiesCell';
 import PricesCell from './homeGrid/Prices';
@@ -10,8 +10,8 @@ export default function HomeGrid({action}) {
   return (
     <>
     <div className='responsive-grid'>
-      <InsideHouseCell action={action} />
-      <OutsideHouseCell action={action} />
+      <InsideApartmentCell action={action} />
+      <OutsideApartmentCell action={action} />
       <FacilitiesCell action={action} />
     </div>
     <div className='responsive-grid'>

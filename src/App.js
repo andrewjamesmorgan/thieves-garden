@@ -4,8 +4,8 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Layout from './pages/Layout';
 import Home from './pages/Home';
-import InsideHouse from './pages/InsideHouse';
-import OutsideHouse from './pages/OutsideHouse';
+import InsideApartment from './pages/InsideApartment';
+import OutsideApartment from './pages/OutsideApartment';
 import Prices from './pages/Prices';
 import Bookings from './pages/Bookings';
 import Contact from './pages/Contact';
@@ -30,8 +30,8 @@ function App() {
             <Route path="bookings" element={<Bookings />} />
             <Route path="prices" element={<Prices />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="inside_house" element={<InsideHouse />} />
-            <Route path="outside_house" element={<OutsideHouse />} />
+            <Route path="inside_apartment" element={<InsideApartment />} />
+            <Route path="outside_apartment" element={<OutsideApartment />} />
             <Route path="facilities" element={<Facilities />} />
             <Route path="location" element={<Location />} />
             <Route path="*" element={<Home />} />

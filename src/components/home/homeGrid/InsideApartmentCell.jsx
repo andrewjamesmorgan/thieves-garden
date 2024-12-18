@@ -1,6 +1,6 @@
 import InfoBox from '../../InfoBox';
 
-export default function InsideHouseCell({action}) {
+export default function InsideApartmentCell({action}) {
   const body = (<>
     <h3>Inside the apartment</h3>
     <p>The apartment is laid out over two floors.</p>
@@ -12,7 +12,7 @@ export default function InsideHouseCell({action}) {
         imageSrc="../../images/inside/maidenhead-lounge-bed.jpeg"
         alt=""
         action={action}
-        route="/inside_house"
+        route="/inside_apartment"
         body={body}
     />
   );
