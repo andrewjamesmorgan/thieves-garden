@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import CroppedImage from './CroppedImage';
 
-export default function InfoBox2({ imageSrc, alt, action, route, body }) {
+export default function InfoBox({ imageSrc, alt, action, route, body }) {
   const navigate = useNavigate();
 
   function imageClicked() {
@@ -27,7 +27,7 @@ export default function InfoBox2({ imageSrc, alt, action, route, body }) {
         className={route ? "info-text" : "info-text-no-link"}
         onClick={openRoute}
       >
-        {body} {/* Directly render JSX */}
+        {body}
       </div>
     </div>
   );

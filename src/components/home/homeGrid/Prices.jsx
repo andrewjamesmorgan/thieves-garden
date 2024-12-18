@@ -8,8 +8,8 @@ export default function PricesCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/prices/maidenhead-prices.png"
-        alt="An abstract image showing rental prices, with a beige landscape in the background"
+        imageSrc="../../images/prices/maidenhead-apartment-prices.jpg"
+        alt="Rental prices, show on a calendar/cash register"
         action={action}
         route="/prices"
         body={body}
