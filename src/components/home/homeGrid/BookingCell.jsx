@@ -8,7 +8,7 @@ export default function BookingCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/booking/maidenhead-booking.png"
+        imageSrc="../../images/booking/maidenhead-calendar.png"
         alt="A couple circling dates on a calendar. 2 suitcases"
         action={action}
         route="/bookings"
