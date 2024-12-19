@@ -12,10 +12,10 @@ export default function HomeGrid({action}) {
     <div className='responsive-grid'>
       <InsideApartmentCell action={action} />
       <OutsideApartmentCell action={action} />
-      <FacilitiesCell action={action} />
+      <LocationCell action={action} />
     </div>
     <div className='responsive-grid'>
-      <LocationCell action={action} />
+      <FacilitiesCell action={action} />
       <BookingCell action={action} />
       <PricesCell action={action} />
     </div>

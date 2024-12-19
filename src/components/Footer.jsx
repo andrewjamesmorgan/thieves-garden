@@ -41,7 +41,7 @@ export default function Footer() {
           />
           <WeekWeather dailyWeather={weatherData.daily}/>
         </>}
-      {error && <Error errorMessage={error}/>}
+      {/* {error && <Error errorMessage={error}/>} */}
     </div>
   );
 }
