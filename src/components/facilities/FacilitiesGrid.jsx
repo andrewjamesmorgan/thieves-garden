@@ -9,15 +9,7 @@ import LaundryCell from "../inside/insideGrid/LaundryCell";
 
 export default function FacilitiesGrid({action}) {
   return (
-    <>
-    {/* <Bathroom></Bathroom>
-    <Kitchen></Kitchen>
-    <Parking></Parking>
-    <Internet></Internet>
-    <Cleaning></Cleaning>
-    <Heating></Heating>
-    <Laundry></Laundry>
-    <TV></TV> */}
+  <>
     <div className='responsive-grid'>
       <BathroomCell action={action} />
       <KitchenCell action={action} />
