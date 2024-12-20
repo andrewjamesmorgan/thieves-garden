@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-export default function FacilitiesHead() {
+export default function ContactHead() {
   return (
     <>
       <Helmet>
@@ -11,37 +11,37 @@ export default function FacilitiesHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Discover the facilities at Oléron Villa, a fully equipped holiday home on the Île d'Oléron. Everything you need for a comfortable and enjoyable stay."
+          content="Contact the owners of Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
-          content="Oléron Villa, facilities, holiday rental, Île d'Oléron, accommodation, kitchen, dining, outdoor entertaining, internet, cycling, family-friendly"
+          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire, contact"
         />
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Facilities at Oléron Villa - Holiday Rental on Île d'Oléron</title>
+        <title>Contact Thieves Garden - serviced apartment in Maidenhead</title>
 
-        <link rel="stylesheet" href="styles.css" /> {/* Replace with your CSS file path */}
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Replace with your favicon path */}
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Facilities at Oléron Villa - Holiday Rental on Île d'Oléron" />
+        <meta property="og:title" content="Contact Thieves Garden - serviced apartment in Maidenhead" />
         <meta
           property="og:description"
-          content="Explore the facilities at Oléron Villa, including a fully equipped kitchen, spacious dining area, outdoor entertaining spaces, internet, and much more."
+          content="Contact the owners of Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com/#/facilities" /> {/* Replace with your site URL */}
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:url" content="https://thievesgarden.co.uk/contact" /> 
+        <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Facilities at Oléron Villa - Holiday Rental on Île d'Oléron" />
+        <meta name="twitter:title" content="Thieves Garden, a serviced apartment in Maidenhead" />
         <meta
           name="twitter:description"
-          content="Explore the facilities at Oléron Villa, including a fully equipped kitchen, spacious dining area, outdoor entertaining spaces, internet, and much more."
+          content="Discover Thieves Garden, a serviced apartment in Maidenhead."
         />
       </Helmet>
     </>

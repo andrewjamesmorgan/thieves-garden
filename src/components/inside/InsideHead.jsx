@@ -11,37 +11,37 @@ export default function InsideHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Discover the features and amenities available inside Oléron Villa. From comfortable bedrooms to modern entertainment systems and a fully equipped kitchen, find everything you need for a relaxing stay."
+          content="Discover what's available inside Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
-          content="Oléron Villa, inside amenities, holiday rental, vacation home, bedrooms, kitchen, entertainment, dining, Île d'Oléron"
+          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire, bedroom, kitchen, lounge, bathroom"
         />
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Inside Oléron Villa - Explore Amenities and Features</title>
+        <title>Inside Thieves Garden - serviced apartment in Maidenhead</title>
 
-        <link rel="stylesheet" href="styles.css" /> {/* Replace with your CSS file path */}
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Replace with your favicon path */}
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Inside Oléron Villa - Explore Amenities and Features" />
+        <meta property="og:title" content="Inside Thieves Garden - serviced apartment in Maidenhead" />
         <meta
           property="og:description"
-          content="Explore the interior of Oléron Villa, including spacious bedrooms, a modern kitchen, entertainment systems, and more. Perfect for a relaxing stay on Île d'Oléron."
+          content="Discover what's available inside Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com/#/inside_house" /> {/* Replace with your site URL */}
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:url" content="https://thievesgarden.co.uk/inside" /> 
+        <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Inside Oléron Villa - Explore Amenities and Features" />
+        <meta name="twitter:title" content="Inside Thieves Garden, a serviced apartment in Maidenhead" />
         <meta
           name="twitter:description"
-          content="Explore the interior of Oléron Villa, including spacious bedrooms, a modern kitchen, entertainment systems, and more. Perfect for a relaxing stay on Île d'Oléron."
+          content="Discover what's available inside Thieves Garden, a serviced apartment in Maidenhead."
         />
       </Helmet>
     </>

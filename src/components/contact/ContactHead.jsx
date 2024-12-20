@@ -11,37 +11,37 @@ export default function ContactHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Get in touch with Oléron Villa to inquire about bookings or ask questions about our vacation home on Île d'Oléron."
+          content="Contact the owners of Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
-          content="contact Oléron Villa, vacation home inquiries, Île d'Oléron, holiday rental, accommodation, contact form"
+          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire, contact"
         />
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Contact Oléron Villa - Île d'Oléron Vacation Home</title>
+        <title>Contact Thieves Garden - serviced apartment in Maidenhead</title>
 
-        <link rel="stylesheet" href="styles.css" /> {/* Replace with your CSS file path */}
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Replace with your favicon path */}
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact Oléron Villa - Vacation Home on Île d'Oléron" />
+        <meta property="og:title" content="Contact Thieves Garden - serviced apartment in Maidenhead" />
         <meta
           property="og:description"
-          content="Reach out to Oléron Villa with your inquiries or questions about our vacation home. Conveniently located near the best attractions on Île d'Oléron."
+          content="Contact the owners of Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="http://oleronvilla.com/#/contact" /> {/* Replace with your site URL */}
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:url" content="https://thievesgarden.co.uk/contact" /> 
+        <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Oléron Villa - Vacation Home on Île d'Oléron" />
+        <meta name="twitter:title" content="Contact Thieves Garden, a serviced apartment in Maidenhead" />
         <meta
           name="twitter:description"
-          content="Reach out to Oléron Villa with your inquiries or questions about our vacation home. Conveniently located near the best attractions on Île d'Oléron."
+          content="Contact the owners of Thieves Garden, a serviced apartment in Maidenhead."
         />
       </Helmet>
     </>

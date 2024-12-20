@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-export default function HomeHead() {
+export default function BookingsHead() {
   return (
     <>
       <Helmet>
@@ -11,29 +11,29 @@ export default function HomeHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
+          content="Book your stay at Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
-          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire"
+          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire, booking"
         />
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Thieves Garden - serviced apartmet in Maidenhead</title>
+        <title>Book Thieves Garden - serviced apartment in Maidenhead</title>
 
         <link rel="stylesheet" href="styles.css" /> 
         <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Thieves Garden - serviced apartmet in Maidenhead" />
+        <meta property="og:title" content="Book Thieves Garden - serviced apartment in Maidenhead" />
         <meta
           property="og:description"
-          content="Discover Thieves Garden, a serviced apartment in Maidenhead"
+          content="Book your stay at Thieves Garden, a serviced apartment in Maidenhead"
         />
         <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk" /> 
+        <meta property="og:url" content="https://thievesgarden.co.uk/book" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
