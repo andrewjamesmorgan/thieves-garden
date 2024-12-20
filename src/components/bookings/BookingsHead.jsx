@@ -1,7 +1,7 @@
 import React from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
-export default function BookingsHead() {
+export default function HomeHead() {
   return (
     <>
       <Helmet>
@@ -11,37 +11,37 @@ export default function BookingsHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Book Oléron Villa, a spacious vacation home on Ile D'Oléron"
+          content="Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
-          content="holiday rental, Île d'Oléron, vacation home, beaches, stay in France, accommodation, Oléron, booking, holiday home"
+          content="Maidenhead, Thieves Garden, apartment, rental, serviced, flat, Berkshire"
         />
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Oléron Villa. Île d'Oléron Vacation Home - Bookings</title>
+        <title>Thieves Garden - serviced apartmet in Maidenhead</title>
 
-        <link rel="stylesheet" href="styles.css" /> {/* Replace with your CSS file path */}
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Replace with your favicon path */}
+        <link rel="stylesheet" href="styles.css" /> 
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Holiday Rental on the Île d'Oléron" />
+        <meta property="og:title" content="Thieves Garden - serviced apartmet in Maidenhead" />
         <meta
           property="og:description"
-          content="Enjoy an unforgettable stay on the Île d'Oléron in our vacation home. Just steps from beaches and local attractions. Book now!"
+          content="Discover Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com/#/bookings" /> {/* Replace with your site URL */}
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:url" content="https://thievesgarden.co.uk" /> 
+        <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Holiday Rental on the Île d'Oléron" />
+        <meta name="twitter:title" content="Thieves Garden, a serviced apartment in Maidenhead" />
         <meta
           name="twitter:description"
-          content="Enjoy an unforgettable stay on the Île d'Oléron in our vacation home. Just steps from beaches and local attractions. Book now!"
+          content="Discover Thieves Garden, a serviced apartment in Maidenhead."
         />
       </Helmet>
     </>
