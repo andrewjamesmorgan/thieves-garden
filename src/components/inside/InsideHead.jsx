@@ -21,8 +21,6 @@ export default function InsideHead() {
         <meta name="robots" content="index, follow" />
 
         <title>Inside Thieves Garden - serviced apartment in Maidenhead</title>
-
-        <link rel="stylesheet" href="styles.css" /> 
         <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}

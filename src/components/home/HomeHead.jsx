@@ -21,8 +21,6 @@ export default function HomeHead() {
         <meta name="robots" content="index, follow" />
 
         <title>Thieves Garden - serviced apartmet in Maidenhead</title>
-
-        <link rel="stylesheet" href="styles.css" /> 
         <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
 
         {/* Open Graph / Facebook */}
