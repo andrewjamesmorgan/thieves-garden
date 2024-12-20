@@ -21,7 +21,7 @@ export default function KitchenCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/facilities/oleron-kitchen.jpg"
+        imageSrc="../../images/facilities/maidenhead-kitchen.jpeg"
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}

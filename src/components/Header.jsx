@@ -11,7 +11,6 @@ export default function Header() {
   }
 
   function hideBurgerMenu() {
-    console.log("Hiding the burger");
     var x = document.getElementById("myTopnav");
     if (showingBurger) {
       x.className = "topnav";
