@@ -8,7 +8,7 @@ import ContactCell from './homeGrid/ContactCell';
 
 export default function HomeGrid({action}) {
   return (
-    <>
+  <>
     <div className='responsive-grid'>
       <InsideApartmentCell action={action} />
       <OutsideApartmentCell action={action} />
@@ -18,8 +18,6 @@ export default function HomeGrid({action}) {
       <FacilitiesCell action={action} />
       <BookingCell action={action} />
       <PricesCell action={action} />
-    </div>
-    <div className='responsive-grid'>
       <ContactCell action={action} />
     </div>
   </>

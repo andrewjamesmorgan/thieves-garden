@@ -1,31 +1,35 @@
-import DiningCell from "./facilitiesGrid/DiningCell";
-import OutdoorEntertainingCell from "./facilitiesGrid/OutdoorEntertainingCell";
-import KitchenCell from "./facilitiesGrid/KitchenCell";
 import WifiCell from "./facilitiesGrid/WifiCell";
 import AVCell from "./facilitiesGrid/AVCell";
-import BikeCell from "./facilitiesGrid/BikeCell";
 import CleaningCell from "./facilitiesGrid/CleaningCell";
-import SleepingCell from "./facilitiesGrid/SleepingCell";
-import BathroomCell from "./facilitiesGrid/BathroomCell";
+import BathroomCell from "../inside/insideGrid/BathroomCell";
+import KitchenCell from "../inside/insideGrid/KitchenCell";
+import ParkingCell from "../outside/outsideGrid/ParkingCell";
+import HeatingCell from "./facilitiesGrid/HeatingCell";
+import LaundryCell from "../inside/insideGrid/LaundryCell";
 
 export default function FacilitiesGrid({action}) {
   return (
     <>
+    {/* <Bathroom></Bathroom>
+    <Kitchen></Kitchen>
+    <Parking></Parking>
+    <Internet></Internet>
+    <Cleaning></Cleaning>
+    <Heating></Heating>
+    <Laundry></Laundry>
+    <TV></TV> */}
     <div className='responsive-grid'>
-      <DiningCell action={action} />
-      <OutdoorEntertainingCell action={action} />
+      <BathroomCell action={action} />
       <KitchenCell action={action} />
-    </div>
-    <div className='responsive-grid'>
       <WifiCell action={action} />
       <AVCell action={action} />
-      <BikeCell action={action} />
-    </div>    
-    <div className='responsive-grid'>
-      <CleaningCell action={action} />
-      <SleepingCell action={action} />
-      <BathroomCell action={action} />
     </div>
+    <div className='responsive-grid'>
+      <ParkingCell action={action} />
+      <HeatingCell action={action} />
+      <CleaningCell action={action} />
+      <LaundryCell action={action} />
+    </div>    
   </>
   );
 }

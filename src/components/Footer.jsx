@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../App';
 import { config } from '../config';
-import Error from './Error';
 import CurrentWeather from './footer/Weather/CurrentWeather';
 import WeekWeather from './footer/Weather/WeekWeather';
 import FooterContact from './footer/FooterContact';
@@ -34,14 +33,13 @@ export default function Footer() {
   return (
     <div className='responsive-grid footer-grid' id="footer">
         <FooterContact/>
-        {weatherData && <>
+        {weatherData && !error && <>
           <CurrentWeather 
             currentWeather={weatherData.current}
             dailyWeather={weatherData.daily[0]}
           />
           <WeekWeather dailyWeather={weatherData.daily}/>
         </>}
-      {/* {error && <Error errorMessage={error}/>} */}
     </div>
   );
 }
