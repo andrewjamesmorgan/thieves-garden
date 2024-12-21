@@ -507,11 +507,11 @@ div.left-content {
 }
 
 table.price-table {
-  width: 600px;
+  width: calc(100% - 40px);
   text-align: left;
   border-collapse: collapse;
   margin: 20px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 table.price-table thead {
@@ -554,6 +554,15 @@ table.price-table tbody {
     background-color: var(--light-two);
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  table.price-table {
+    width: calc(100% - 40px);
+    text-align: left;
+    border-collapse: collapse;
+    margin: 20px;
+    margin-right: 20px;
+    font-size: 1em;
   }
 }
 
