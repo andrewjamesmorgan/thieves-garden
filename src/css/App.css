@@ -496,7 +496,6 @@ a:hover {
 }
 
 .day-cell.filler {
-  /* background-color: #f0f0f0; */
   color: #aaa;
 }
 
@@ -507,7 +506,7 @@ div.left-content {
 }
 
 table.price-table {
-  width: calc(100% - 40px);
+  width: 620px;
   text-align: left;
   border-collapse: collapse;
   margin: 20px;
