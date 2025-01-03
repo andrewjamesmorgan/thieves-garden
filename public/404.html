@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; URL=/new-page" />
+    <script>
+      // Redirect mapping
+      const redirects = {
+        "/Lounge.html": "/#/inside_apartment",
+        "/contact.html": "/#/contact",
+        "/Location.html": "/#/location",
+        "/Availability.html": "/#/bookings",
+        "/Reservations.html": "/#/bookings",
+        "/LocalInformation.html": "/#/location",
+        "/Dining.html": "/#/inside_apartment",
+        "/Facilities.html": "/#/facilities",
+        "/Prices.html": "/#/prices",
+        "/Lounge": "/#/inside_apartment",
+        "/contact": "/#/contact",
+        "/Location": "/#/location",
+        "/Availability": "/#/bookings",
+        "/Reservations": "/#/bookings",
+        "/LocalInformation": "/#/location",
+        "/Dining": "/#/inside_apartment",
+        "/Facilities": "/#/facilities",
+        "/Prices": "/#/prices",
+      };
+
+      const redirect = redirects[window.location.pathname];
+      if (redirect) {
+        window.location.replace(redirect);
+      } else {
+        // If no match, send to home or a fallback page
+        window.location.replace("/");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
