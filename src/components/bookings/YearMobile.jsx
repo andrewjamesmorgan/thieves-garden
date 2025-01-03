@@ -20,9 +20,9 @@ export default function YearMobile({ year }) {
 
   return (
     <div className="year-mobile-container">
-      <h3 className="year">{year.year}</h3>
+      {year && year.year && <h3 className="year">{year.year}</h3>}
       <div className='calendar-grid'>
-        {year.months.map((month, monthIndex) => {
+        {year && year.months && year.months.map((month, monthIndex) => {
           const weeks = getWeeks(month.days);
 
           return (
@@ -37,7 +37,7 @@ export default function YearMobile({ year }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {weeks.map((week, weekIndex) => (
+                  {weeks && weeks.map((week, weekIndex) => (
                     <tr key={weekIndex}>
                       {week.map((day, dayIndex) => (
                         <td
