@@ -21,7 +21,8 @@ export const bookingData = [
     {
       property: 'Thieves Garden',
       startDate: new Date('2025-01-05'),
-      endDate: new Date('2025-01-26'),
+      endDate: new Date('2025-01-12'),
+      notes: "Had originally booked for 3 weeks, but only stayed/paid for 1",
       status: 'booked',
       booking: {
         name: 'Simon Nagy',
