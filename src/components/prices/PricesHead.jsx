@@ -31,7 +31,7 @@ export default function PricesHead() {
           content="Discover the weekly and monthly rates for renting Thieves Garden, a serviced apartment in Maidenhead"
         />
         <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk/prices" /> 
+        <meta property="og:url" content="https://thievesgarden.co.uk/#/prices" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}

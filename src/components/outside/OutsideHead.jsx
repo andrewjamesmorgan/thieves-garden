@@ -31,7 +31,7 @@ export default function OutsideHead() {
           content="Discover what's available outside Thieves Garden, a serviced apartment in Maidenhead. See amenities like car parking and a terrace/patio."
         />
         <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk/outside" /> 
+        <meta property="og:url" content="https://thievesgarden.co.uk/#/outside" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}

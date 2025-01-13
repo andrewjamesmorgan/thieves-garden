@@ -31,7 +31,7 @@ export default function LocationHead() {
           content="Discover the location of Thieves Garden, a serviced apartment in Maidenhead. See its relation to London and Maidenhead, and nearby amenities like the train station, pubs, and supermarket."
         />
         <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk/location" /> 
+        <meta property="og:url" content="https://thievesgarden.co.uk/#/location" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
