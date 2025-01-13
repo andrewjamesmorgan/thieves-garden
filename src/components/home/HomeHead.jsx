@@ -30,7 +30,7 @@ export default function HomeHead() {
           property="og:description"
           content="Discover Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/images/maidenhead-apartment-OG.jpeg" />
         <meta property="og:url" content="https://thievesgarden.co.uk" /> 
         <meta property="og:locale" content="en_GB" />
 
