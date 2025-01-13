@@ -11,7 +11,7 @@ export default function ContactHead() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Contact the owners of Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
+          content="Facilities for Thieves Garden. Self-catered/services apartment in Maidenhead, Berkshire."
         />
         <meta
           name="keywords"
@@ -28,10 +28,10 @@ export default function ContactHead() {
         <meta property="og:title" content="Contact Thieves Garden - serviced apartment in Maidenhead" />
         <meta
           property="og:description"
-          content="Contact the owners of Thieves Garden, a serviced apartment in Maidenhead"
+          content="Facilities for Thieves Garden, a serviced apartment in Maidenhead"
         />
         <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk/contact" /> 
+        <meta property="og:url" content="https://thievesgarden.co.uk/#/facilities" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
