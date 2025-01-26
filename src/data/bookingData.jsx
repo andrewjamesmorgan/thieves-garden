@@ -1,6 +1,17 @@
 export const bookingData = [
   {
     property: 'Thieves Garden',
+    startDate: new Date('2025-02-03'),
+    endDate: new Date('2025-03-03'),
+    status: 'booked',
+    booking: {
+      name: 'Nicolas',
+      source: 'Airbnb'
+    },
+    comments: '2 adults.'
+  },
+  {
+    property: 'Thieves Garden',
     startDate: new Date('2025-06-08'),
     endDate: new Date('2025-06-20'),
     status: 'booked',
