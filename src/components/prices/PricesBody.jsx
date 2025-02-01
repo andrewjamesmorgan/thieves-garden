@@ -28,17 +28,17 @@ export default function PricesBody() {
           <tr>
             <td>1 wk</td>
             <td>Pay 1 week in advance</td>
-            <td>£460/wk</td>
+            <td>£500/wk</td>
           </tr>
           <tr>
             <td>2-4 wks</td>
             <td>Pay 1 week in advance</td>
-            <td>£420/wk</td>
+            <td>£470/wk</td>
           </tr>
           <tr>
             <td>5+ wks</td>
             <td>Pay 2 weeks in advance</td>
-            <td>£390/wk</td>
+            <td>£440/wk</td>
           </tr>
         </tbody>
       </table>
