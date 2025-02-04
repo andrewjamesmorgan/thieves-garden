@@ -2,19 +2,25 @@ import React, { useState, useEffect } from 'react';
 import CalendarFull from './CalendarFull';
 import CalendarMobile from './CalendarMobile';
 import { config } from '../../config';
-import { bookingData } from '../../data/bookingData';
 
-function checkBooking(date) {
+function checkBooking(date, bookingData) {
   let status = 'available';
-  bookingData.forEach ((booking) => {
-    if (date >= booking.startDate && date < booking.endDate) {
+  bookingData.forEach((booking) => {
+    if (date >= new Date(booking.startDate) && date < new Date(booking.endDate)) {
       status = booking.status;
     }
   });
   return status;
 }
 
-function generateCalendarData(years) {
+async function fetchBookings() {
+  const response = await fetch(config.getTGBookingURL);
+  const data = await response.json();
+  console.log("Fetched bookings:", data); // Log the fetched data
+  return data.bookings ? data.bookings : [];
+}
+
+function generateCalendarData(years, bookingData) {
   const monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -44,20 +50,11 @@ function generateCalendarData(years) {
             days.push({
               dayOfMonth: date.getDate(),
               dayOfWeek: date.getDay(),
-              status: checkBooking(date),
+              status: checkBooking(date, bookingData)
             });
             date.setDate(date.getDate() + 1);
           }
 
-          // Add filler days for the last week
-          for (let fillerDay = days.length; fillerDay < 37; fillerDay++) {
-            days.push({
-              dayOfMonth: fillerDay + 1,
-              status: "filler"
-            });
-          }
-
-          // Add the month object with its name and days
           months.push({
             monthName: monthNames[month],
             days
@@ -69,13 +66,12 @@ function generateCalendarData(years) {
         year,
         months
       };
-    } else {
-      return [];
     }
-  }).filter(Boolean); // Remove any undefined values (years before the current year)
+    return null;
+  }).filter(yearData => yearData !== null);
 }
 
-export default function Calendar() {
+function Calendar() {
   const [calendarData, setCalendarData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -91,20 +87,27 @@ export default function Calendar() {
   }, []);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const bookings = await fetchBookings();
       const years = config.calendarYears;
       console.log("Running useEffect");
-      const data = generateCalendarData(years);
+      const data = generateCalendarData(years, bookings);
       console.log("Generated YearData");
       setCalendarData(data);
+    };
+
+    fetchData();
   }, []);
   
-  return(
+  return (
     <div>
       {isMobile ? (
-          <CalendarMobile calendar={calendarData} />
+        <CalendarMobile calendar={calendarData} />
       ) : (
-          <CalendarFull calendar={calendarData} />
+        <CalendarFull calendar={calendarData} />
       )}
     </div>
-  )
+  );
 }
+
+export default Calendar;
