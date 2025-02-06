@@ -27,7 +27,7 @@ export default function LoginForm() {
  
       // TODO: Replace with your own form endpoint
 
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(config.getBookingsDetailsURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export default function LoginForm() {
           </div>
           {/* Submit Button */}
           <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send"}
+            {isSubmitting ? "Loggin in..." : "log in"}
           </button>
           {errorMessage && <div className='error-message'>{errorMessage}</div>}
         </form>
