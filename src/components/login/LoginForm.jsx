@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { config } from '../../config';
 
 export default function LoginForm() {
@@ -7,10 +8,10 @@ export default function LoginForm() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-    reset,
   } = useForm();
 
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
@@ -24,32 +25,28 @@ export default function LoginForm() {
     const json = JSON.stringify(object);
 
     try {
- 
-      // TODO: Replace with your own form endpoint
-
       const res = await fetch(config.getBookingsDetailsURL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
+        body: json
       });
       const result = await res.json();
-      if (res.ok && result.success) {
-        reset(); // Reset the form on success
+      if (res.status === 200) {
+        // console.log(result.bookings);
+        localStorage.setItem("tg-username", object.username);
+        localStorage.setItem("tg-password", object.password);
+        navigate('/');
       } else {
-        setErrorMessage(`Failed to send message: ${result.message}`);
+        setErrorMessage(`Failed to log in: ${result.message}`);
       }
     } catch (error) {
-      setErrorMessage(`Failed to send message: ${error.message}`);
+      setErrorMessage(`Failed to log in: ${error.message}`);
     }
   };
 
   return (
     <div className="container">
       {isSubmitSuccessful && !errorMessage ? (
-        <h2 className="text-success">Message sent!</h2>
+        <h2 className="text-success">Logging in</h2>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
           <div className="responsive-form">
