@@ -1,4 +1,5 @@
 import React from 'react';
+import Day from './Day';
 
 export default function YearMobile({ year }) {
   const weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -40,12 +41,7 @@ export default function YearMobile({ year }) {
                   {weeks && weeks.map((week, weekIndex) => (
                     <tr key={weekIndex}>
                       {week.map((day, dayIndex) => (
-                        <td
-                          key={dayIndex}
-                          className={`day-cell ${day.status}`}
-                        >
-                          {day.status !== 'filler' ? day.dayOfMonth : ''}
-                        </td>
+                        <Day day={day} dayIndex={dayIndex}/>
                       ))}
                     </tr>
                   ))}

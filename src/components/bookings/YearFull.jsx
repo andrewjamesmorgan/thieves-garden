@@ -22,7 +22,11 @@ export default function YearFull({ year }) {
               <tr key={monthIndex}>
                 <td className="month-name">{month.monthName}</td>
                 {month.days && month.days.map((day, dayIndex) => (
-                  <td key={dayIndex} className={`day-cell ${day.status}`}>
+                  <td
+                    key={dayIndex}
+                    className={`day-cell ${day.status}`}
+                    title={day.status !== 'filler' ? day.status : ''}
+                  >
                     {day.status !== 'filler' ? day.dayOfMonth : ''}
                   </td>
                 ))}
