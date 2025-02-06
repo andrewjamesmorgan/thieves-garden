@@ -14,7 +14,7 @@ function checkBooking(date, bookingData) {
 }
 
 async function fetchBookings() {
-  const response = await fetch(config.getTGBookingURL);
+  const response = await fetch(config.getBookingURL);
   const data = await response.json();
   console.log("Fetched bookings:", data); // Log the fetched data
   return data.bookings ? data.bookings : [];
