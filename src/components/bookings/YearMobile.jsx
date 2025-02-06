@@ -6,6 +6,7 @@ export default function YearMobile({ year }) {
 
   const getWeeks = (days) => {
     const weeks = [];
+    const emptyWeek = Array.from({ length: 7 }, () => ({ status: 'filler' }));
     let week = [];
 
     days.forEach((day, index) => {
@@ -15,6 +16,9 @@ export default function YearMobile({ year }) {
         week = [];
       }
     });
+    if (weeks.length < 6) {
+      weeks.push(emptyWeek);
+    }
 
     return weeks;
   };
