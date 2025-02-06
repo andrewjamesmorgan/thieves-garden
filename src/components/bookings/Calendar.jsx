@@ -14,7 +14,8 @@ function checkBooking(date, bookingData) {
 }
 
 async function fetchBookings() {
-  const response = await fetch(config.getBookingURL);
+  console.log(`Fetching bookings from ${config.getbookingsURL}`);
+  const response = await fetch(config.getbookingsURL);
   const data = await response.json();
   console.log("Fetched bookings:", data); // Log the fetched data
   return data.bookings ? data.bookings : [];
@@ -88,6 +89,7 @@ function Calendar() {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log("Fetching data...");
       const bookings = await fetchBookings();
       const years = config.calendarYears;
       console.log("Running useEffect");
