@@ -31,7 +31,6 @@ export default function LoginForm() {
       });
       const result = await res.json();
       if (res.status === 200) {
-        // console.log(result.bookings);
         localStorage.setItem("tg-username", object.username);
         localStorage.setItem("tg-password", object.password);
         navigate('/');
@@ -75,7 +74,7 @@ export default function LoginForm() {
           </div>
           {/* Submit Button */}
           <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-            {isSubmitting ? "Loggin in..." : "log in"}
+            {isSubmitting ? "Logging in..." : "log in"}
           </button>
           {errorMessage && <div className='error-message'>{errorMessage}</div>}
         </form>
