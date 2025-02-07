@@ -532,6 +532,43 @@ table.price-table tbody {
   color: green;
 } */
 
+div.bookings-info {
+  margin-top: 20px;
+}
+
+.booking-info {
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-width: 2px;
+  box-shadow: 2px 2px 8px var(--dark-translucent);
+  padding: 10px;
+}
+
+.booking-info p {
+  margin: 5px 0; /* Adjust the vertical space between <p> elements */
+}
+
+.booking-info.past {
+  background-color: var(--dark-accent);
+  color: var(--light-one);
+}
+
+.booking-info.present {
+  background-color: var(--light-highlight);
+  color: var(--light-two);
+  border-color: var(--dark-translucent);
+  box-shadow: 2px 2px 22px var(--dark-translucent);
+  border-width: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.booking-info.future {
+  background-color: var(--dark-highlight);
+  color: var(--light-one);
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   

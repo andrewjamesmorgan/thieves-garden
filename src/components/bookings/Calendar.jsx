@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { config } from '../../config';
 import CalendarFull from './CalendarFull';
 import CalendarMobile from './CalendarMobile';
-import { config } from '../../config';
+import BookingsInfo from './admin/BookingsInfo';
 
 function checkBooking(date, bookingData) {
   let dayBooking = { status: 'available'};
@@ -113,6 +114,7 @@ function generateCalendarData(years, bookingData) {
 function Calendar() {
   const [calendarData, setCalendarData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState(null);
 
   useEffect(() => {
     const updateDeviceWidth = () => {
@@ -129,6 +131,11 @@ function Calendar() {
     const fetchData = async () => {
       console.log("Fetching data...");
       const bookings = await fetchBookings();
+      // Check that it includes the info that only admins see
+      if (bookings && bookings.length > 0 && 
+        bookings[0].property === 'Thieves Garden') {
+        setBookingDetails(bookings);
+      }
       const years = config.calendarYears;
       const data = generateCalendarData(years, bookings);
       console.log("Generated YearData");
@@ -145,6 +152,7 @@ function Calendar() {
       ) : (
         <CalendarFull calendar={calendarData} />
       )}
+      {bookingDetails && <BookingsInfo bookings={bookingDetails} />}
     </div>
   );
 }
