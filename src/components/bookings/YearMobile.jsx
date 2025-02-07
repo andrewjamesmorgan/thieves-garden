@@ -16,7 +16,7 @@ export default function YearMobile({ year }) {
         week = [];
       }
     });
-    if (weeks.length < 6) {
+    while (weeks.length < 6) {
       weeks.push(emptyWeek);
     }
 
