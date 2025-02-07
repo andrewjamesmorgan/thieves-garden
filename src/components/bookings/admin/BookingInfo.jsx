@@ -21,7 +21,9 @@ export default function BookingInfo({ booking }) {
         <p>
           {booking.booking && booking.booking.name && <span>{booking.booking.name}</span>}
           {booking.booking && booking.booking.source && <span> ({booking.booking.source})</span>}
+          {booking.booking && booking.booking.price && <span> {booking.booking.price}</span>}
         </p>
+        {booking.booking && booking.booking.email && <p> &lt;{booking.booking.email}&gt;</p>}
         {booking.comments && <p><i>{booking.comments}</i></p>}
       </div>
     </>

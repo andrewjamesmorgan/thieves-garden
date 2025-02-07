@@ -4,7 +4,7 @@ export default function BookingsInfo({bookings}) {
   return (
     <>
       <div id='bookings-info' className='bookings-info'>
-        <h1>Bookings Info</h1>
+        <h1>Existing Bookings</h1>
       </div>
       <div className='responsive-text'>
         <div className='responsive-grid'>
