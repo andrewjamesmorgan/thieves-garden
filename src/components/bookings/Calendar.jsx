@@ -4,21 +4,59 @@ import CalendarMobile from './CalendarMobile';
 import { config } from '../../config';
 
 function checkBooking(date, bookingData) {
-  let status = 'available';
+  let dayBooking = { status: 'available'};
   bookingData.forEach((booking) => {
     if (date >= new Date(booking.startDate) && date < new Date(booking.endDate)) {
-      status = booking.status;
+      dayBooking = booking;
     }
   });
-  return status;
+  return dayBooking;
 }
 
 async function fetchBookings() {
-  console.log(`Fetching bookings from ${config.getbookingsURL}`);
-  const response = await fetch(config.getbookingsURL);
-  const data = await response.json();
-  console.log("Fetched bookings:", data); // Log the fetched data
-  return data.bookings ? data.bookings : [];
+  const username = localStorage.getItem("tg-username");
+  const password = localStorage.getItem("tg-password");
+  const isAdmin = username && password;
+  const url = isAdmin ? config.getBookingsDetailsURL : config.getbookingsURL;
+  if (isAdmin) {
+    const body = {
+      username,
+      password
+    };
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body)
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log("Fetched full bookings:", data);
+        return data.bookings ? data.bookings : []; 
+      } else {
+        console.error(`Failed to fetch full bookings: ${data.message}`);
+        return [];
+      }
+    } catch (error) {
+      console.error(`Failed to fetch full bookings: ${error.message}`);
+      return [];
+    }
+  } else {
+    try {
+      console.log(`Fetching bookings from ${config.getbookingsURL}`);
+      const response = await fetch(config.getbookingsURL);
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log("Fetched bookings:", data);
+        return data.bookings ? data.bookings : [];
+      } else {
+        console.error(`Failed to fetch bookings: ${data.message}`);
+        return [];
+      }
+    } catch (error) {
+      console.error(`Failed to fetch bookings: ${error.message}`);
+      return [];
+    }
+  }
 }
 
 function generateCalendarData(years, bookingData) {
@@ -92,7 +130,6 @@ function Calendar() {
       console.log("Fetching data...");
       const bookings = await fetchBookings();
       const years = config.calendarYears;
-      console.log("Running useEffect");
       const data = generateCalendarData(years, bookings);
       console.log("Generated YearData");
       setCalendarData(data);
