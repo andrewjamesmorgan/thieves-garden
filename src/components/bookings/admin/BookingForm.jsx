@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { config } from '../../config';
+import { config } from '../../../config';
 
-export default function BookingsForm() {
+export default function BookingForm({bookingId, pickBooking, refresh}) {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
-  } = useForm();
+  } = useForm({
+    // defaultValues: {
+    //   email: booking?.booking?.email || ""
+    // },
+  });
   
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+
+  useEffect(() => {
+    // Dynamically update default values if booking parameter changes
+    if (bookingId) {
+      // TODO: Fetch booking from DB
+      setValue('email', 'no@nads.com' || '');
+      // Set other default values here if needed
+    }
+  }, [bookingId, setValue]);
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
@@ -35,7 +49,6 @@ export default function BookingsForm() {
     }
 
     const formData = new FormData();
-    formData.append("access_key", config.formKey);
     formData.append("startDate", startDate.toISOString());
     formData.append("endDate", endDate.toISOString());
     
@@ -44,7 +57,8 @@ export default function BookingsForm() {
     });
 
     let object = Object.fromEntries(formData);
-    object.subject = `Booking request from ${object.name ? object.name : "unknown"} for Thieves Garden`;
+    object.subject = 
+      `Booking request from ${object.name ? object.name : "unknown"} for Thieves Garden`;
     object.redirect = "https://www.thievesgarden.co.uk/";
     const json = JSON.stringify(object);
     
