@@ -3,7 +3,7 @@ import { config } from '../../config';
 import CalendarFull from './CalendarFull';
 import CalendarMobile from './CalendarMobile';
 import BookingsInfo from './admin/BookingsInfo';
-import AdminBooking from './admin/AdminBooking';
+// import AdminBooking from './admin/AdminBooking';
 
 function checkBooking(date, bookingData) {
   let dayBooking = { status: 'available'};
@@ -76,7 +76,7 @@ function generateCalendarData(years, bookingData) {
         if (year > today.getFullYear() || 
             (year === today.getFullYear() && month >= today.getMonth())) {
           const days = [];
-          const date = new Date(year, month, 1);
+          const date = new Date(Date.UTC(year, month, 1));
 
           // Add filler days for the first week
           for (let fillerDay = date.getDay(); fillerDay > 0; fillerDay--) {
