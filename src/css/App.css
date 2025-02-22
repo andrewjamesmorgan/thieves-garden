@@ -548,6 +548,7 @@ div.bookings-info {
   border-width: 2px;
   box-shadow: 2px 2px 8px var(--dark-translucent);
   padding: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-radius 0.25s ease;
 }
 
 .booking-info p {
@@ -572,6 +573,13 @@ div.bookings-info {
 .booking-info.future {
   background-color: var(--dark-highlight);
   color: var(--light-one);
+}
+
+.booking-info:hover {
+  transform: scale(1.15);
+  border-radius: 50px;
+  box-shadow: 2px 2px 8px 4px var(--dark-translucent);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 620px) {

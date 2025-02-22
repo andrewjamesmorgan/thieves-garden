@@ -1,4 +1,4 @@
-export default function BookingInfo({ booking, pickBookingId }) {
+export default function BookingInfo({ booking }) {
   function formatDate(dateString) {
     const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-GB', options);

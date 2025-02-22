@@ -116,6 +116,7 @@ function Calendar() {
   const [calendarData, setCalendarData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [bookingDetails, setBookingDetails] = useState(null);
+  const [selectedBooking, setSelectedBooking] = useState(null);
 
   useEffect(() => {
     const updateDeviceWidth = () => {
@@ -153,7 +154,10 @@ function Calendar() {
       ) : (
         <CalendarFull calendar={calendarData} />
       )}
-      {bookingDetails && <BookingsInfo bookings={bookingDetails} />}
+      {bookingDetails && <BookingsInfo
+        bookings={bookingDetails} 
+        selectBooking={setSelectedBooking}
+      />}
     </div>
   );
 }
