@@ -73,7 +73,7 @@ export default function BookingsForm() {
   };
   
   return (
-    <div className='space-above'>
+    <div className='container space-above'>
     {isSubmitSuccessful && !errorMessage ? (
       <h2 className="text-success">Your message has been sent!</h2>
     ) : (

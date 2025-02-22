@@ -7,9 +7,7 @@ export default function BookingsContent() {
     <div className='space-above'>
       <BookingsIntro />
       <Calendar />
-      <div className="container">
-        <BookingsForm />
-      </div>
+      <BookingsForm />
     </div>
   );
 }
