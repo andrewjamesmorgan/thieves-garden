@@ -112,11 +112,10 @@ function generateCalendarData(years, bookingData) {
   }).filter(yearData => yearData !== null);
 }
 
-function Calendar() {
+function Calendar({selectBooking}) {
   const [calendarData, setCalendarData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [bookingDetails, setBookingDetails] = useState(null);
-  const [selectedBooking, setSelectedBooking] = useState(null);
 
   useEffect(() => {
     const updateDeviceWidth = () => {
@@ -156,7 +155,7 @@ function Calendar() {
       )}
       {bookingDetails && <BookingsInfo
         bookings={bookingDetails} 
-        selectBooking={setSelectedBooking}
+        selectBooking={selectBooking}
       />}
     </div>
   );

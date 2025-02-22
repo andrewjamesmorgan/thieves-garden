@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { config } from '../../config';
 
-export default function BookingsForm() {
+export default function BookingForm() {
   const {
     register,
     handleSubmit,

@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { config } from '../../../config';
 
-export default function BookingForm({bookingId, pickBooking, refresh}) {
+export default function AdminBookingForm({booking, refresh}) {
   const {
     register,
     handleSubmit,
@@ -20,16 +20,25 @@ export default function BookingForm({bookingId, pickBooking, refresh}) {
   
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [bookingToWrite, setBookingToWrite] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
     // Dynamically update default values if booking parameter changes
-    if (bookingId) {
-      // TODO: Fetch booking from DB
-      setValue('email', 'no@nads.com' || '');
-      // Set other default values here if needed
+    if (booking) {
+      setBookingToWrite(booking);
+      setValue('email', booking.booking?.email ?? '');
+      setValue('name', booking.booking?.name ?? '');
+      setValue('source', booking.booking?.source ?? '');
+      setValue('price', booking.booking?.price ?? '');
+      if (booking.startDate) {setStartDate(new Date(booking.startDate));}
+      if (booking.endDate) {setEndDate(new Date(booking.endDate));}
+      setValue('comments', booking.comments ?? '');
+      setValue('status', booking.status ?? '');
+
+      // TODO: Set other default values here if needed
     }
-  }, [bookingId, setValue]);
+  }, [booking, setValue]);
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
@@ -87,7 +96,7 @@ export default function BookingForm({bookingId, pickBooking, refresh}) {
   };
   
   return (
-    <div className='space-above'>
+    <div className='form-container space-above'>
     {isSubmitSuccessful && !errorMessage ? (
       <h2 className="text-success">Your message has been sent!</h2>
     ) : (
@@ -167,23 +176,65 @@ export default function BookingForm({bookingId, pickBooking, refresh}) {
             />
             {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
           </div>
+
+          {/* Source Field */}
+          <div className="mb-3 med-field">
+            <label htmlFor="source" className="form-label">Source</label>
+            <select
+              id="source"
+              className={`form-control ${errors.source ? 'is-invalid' : ''}`}
+              {...register('source', { required: "Please select a source" })}
+            >
+              <option value="">Select source</option>
+              <option value="Airbnb">Airbnb</option>
+              <option value="direct">Direct</option>
+            </select>
+            {errors.source && <div className="invalid-feedback">{errors.source.message}</div>}
+          </div>
+
+          {/* Status Field */}
+          <div className="mb-3 med-field">
+            <label htmlFor="status" className="form-label">Status</label>
+            <select
+              id="status"
+              className={`form-control ${errors.status ? 'is-invalid' : ''}`}
+              {...register('status', { required: "Please select a status" })}
+            >
+              <option value="">Select status</option>
+              <option value="tentative">Tentative</option>
+              <option value="booked">Booked</option>
+            </select>
+            {errors.status && <div className="invalid-feedback">{errors.status.message}</div>}
+          </div>
+
+          {/* Price Field */}
+          <div className="mb-3 med-field">
+            <label htmlFor="price" className="form-label">Price</label>
+            <input
+              id="price"
+              type="text"
+              className={`form-control ${errors.price ? 'is-invalid' : ''}`}
+              {...register('price', { required: "Please enter a price" })}
+            />
+            {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
+          </div>
         </div>
 
-        {/* Message Field */}
+        {/* Comments Field */}
         <div className="mb-3">
-          <label htmlFor="message" className="form-label">Message (optional)</label>
+          <label htmlFor="comments" className="form-label">Comments (optional)</label>
           <textarea
-            id="message"
+            id="comments"
             rows={5}
             className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-            {...register('message')}
+            {...register('comments')}
           />
           {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
         </div>
 
         {/* Submit Button */}
         <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Request booking"}
+          {isSubmitting ? "Sending..." : (booking ? "Update booking" : "Add booking")}
         </button>
         {errorMessage && <div className='error-message'>{errorMessage}</div>}
       </form>

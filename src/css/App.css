@@ -576,10 +576,15 @@ div.bookings-info {
 }
 
 .booking-info:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   border-radius: 50px;
   box-shadow: 2px 2px 8px 4px var(--dark-translucent);
   cursor: pointer;
+}
+
+.form-container {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 @media only screen and (max-width: 620px) {
@@ -612,6 +617,11 @@ div.bookings-info {
     margin: 20px;
     margin-right: 20px;
     font-size: 1em;
+  }
+
+  .form-container {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 

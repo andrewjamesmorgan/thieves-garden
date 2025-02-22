@@ -23,7 +23,7 @@ export default function YearFull({ year }) {
               <tr key={monthIndex}>
                 <td className="month-name">{month.monthName}</td>
                 {month.days && month.days.map((day, dayIndex) => (
-                   <Day day={day} dayIndex={dayIndex}/>
+                   <Day key={dayIndex} day={day} dayIndex={dayIndex}/>
                 ))}
               </tr>
             ))}
