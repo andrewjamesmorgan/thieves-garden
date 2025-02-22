@@ -11,7 +11,8 @@ export default function BookingsInfo({bookings, selectBooking}) {
           {bookings.map((booking, index) => (
             <div 
               onClick={() => selectBooking(booking)}
-              key={index}>  
+              key={index}
+            >  
               <BookingInfo key={index} booking={booking} />
             </div>
           ))}
