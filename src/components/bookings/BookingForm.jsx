@@ -71,6 +71,13 @@ export default function BookingForm() {
       setErrorMessage(`"Failed to send message": ${error.message}`);
     }
   };
+
+  const onStartDate = (date) => {
+    setStartDate(date);
+    const newEndDate = new Date(date);
+    newEndDate.setDate(newEndDate.getDate() + 7);
+    setEndDate(newEndDate);
+  }
   
   return (
     <div className='container space-above'>
@@ -86,7 +93,7 @@ export default function BookingForm() {
             <ReactDatePicker
               id="startDate"
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={onStartDate}
               dateFormat="yyyy-MM-dd"
               className="form-control"
               placeholderText="Select start date"

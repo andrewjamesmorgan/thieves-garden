@@ -244,6 +244,8 @@ button.btn-primary-branded {
   font-size: 24px;
   padding: 10px 20px;
   margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   transition: all 0.3s ease;
 }
 
@@ -255,6 +257,14 @@ button.btn-primary-branded:hover {
   font-size: 28x; 
   font-weight: bold; 
   box-shadow: 0px 4px 8px var(--dark-translucent);
+}
+
+button.btn-primary-danger {
+  background-color: var(--error-color);
+}
+
+button.btn-primary-danger:hover {
+  background-color: var(--error-color);
 }
 
 div.week-column-booked {

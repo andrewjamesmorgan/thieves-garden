@@ -135,6 +135,10 @@ export default function BookingsContent() {
     setCalendarData(data);
   };
 
+  const clearBooking = () => {
+    setSelectedBooking(null);
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -151,6 +155,7 @@ export default function BookingsContent() {
         <AdminBookingForm 
           booking={selectedBooking} 
           refresh={fetchData}
+          clearBooking={clearBooking}
         />
       ) : (
         <BookingForm/> 

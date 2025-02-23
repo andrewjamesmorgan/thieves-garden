@@ -8,7 +8,7 @@ export const config = {
     getBookingsDetailsURL: `https://qb7o7nb5ohusfz6ljvq5v4h3ca0wpnpl.lambda-url.eu-west-1.on.aws/?secret=${tgApiSecret}`,
     addBookingURL: `https://o6bf7ljxy26un2h6dx5rlhjzvq0sxvfw.lambda-url.eu-west-1.on.aws/?secret=${tgApiSecret}`,
     updateBookingURL: `https://bxsmpq2rgp5psgqhkrbcfxndu40hyxsw.lambda-url.eu-west-1.on.aws/?secret=${tgApiSecret}`,
-    deleteBookingURL: `htthttps://p75vdbel6b6e5kguqmpk5yjapy0dixhz.lambda-url.eu-west-1.on.aws/?secret=${tgApiSecret}`,
+    deleteBookingURL: `https://p75vdbel6b6e5kguqmpk5yjapy0dixhz.lambda-url.eu-west-1.on.aws/?secret=${tgApiSecret}`,
     lat: 51.5206777,
     lon: -0.7401434,
     mapId: '15019cba5d15b2ed',

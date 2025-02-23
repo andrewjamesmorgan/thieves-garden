@@ -5,15 +5,15 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { config } from '../../../config';
 
-export default function AdminBookingForm({booking, refresh}) {
+export default function AdminBookingForm({ booking, refresh, clearBooking }) {
   const {
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm({});
-  
+
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -24,8 +24,8 @@ export default function AdminBookingForm({booking, refresh}) {
       setValue('name', booking.booking?.name ?? '');
       setValue('source', booking.booking?.source ?? '');
       setValue('price', booking.booking?.price ?? '');
-      if (booking.startDate) {setStartDate(new Date(booking.startDate));}
-      if (booking.endDate) {setEndDate(new Date(booking.endDate));}
+      if (booking.startDate) { setStartDate(new Date(booking.startDate)); }
+      if (booking.endDate) { setEndDate(new Date(booking.endDate)); }
       setValue('comments', booking.comments ?? '');
       setValue('status', booking.status ?? '');
     }
@@ -69,11 +69,11 @@ export default function AdminBookingForm({booking, refresh}) {
       password: localStorage.getItem("tg-password"),
       booking: bookingToStore
     }
-   
+
     const json = JSON.stringify(bodyObject);
-    
+
     console.log(`Submit`, json);
-    
+
     if (booking) {
       try {
         const res = await fetch(config.updateBookingURL, {
@@ -89,7 +89,7 @@ export default function AdminBookingForm({booking, refresh}) {
           setErrorMessage(`Failed to send message to update booking: ${result.message}`);
         }
       } catch (error) {
-        setErrorMessage(`Failed to send message to update booking:: ${error.message}`);
+        setErrorMessage(`Failed to send message to update booking: ${error.message}`);
       }
     } else {
       try {
@@ -100,8 +100,8 @@ export default function AdminBookingForm({booking, refresh}) {
         const result = await res.json();
         if (res.ok) {
           reset(); // Reset the form on success
-          setStartDate(null); 
-          setEndDate(null); 
+          setStartDate(null);
+          setEndDate(null);
           console.log("Booking added successfully");
         } else {
           console.log(`Failed to send message to add booking: ${result.message}`);
@@ -112,15 +112,60 @@ export default function AdminBookingForm({booking, refresh}) {
         setErrorMessage(`Exception: Failed to send message to add booking: ${error.message}`);
       }
     }
-    refresh(); 
+    refresh();
   };
-  
+
+  const onDelete = async () => {
+    if (!booking) {
+      return;
+    }
+
+    // Show confirmation dialog
+    const confirmed = window.confirm("Are you sure you want to delete this booking?");
+    if (!confirmed) {
+      return;
+    }
+
+    setErrorMessage(null);
+    const bodyObject = {
+      username: localStorage.getItem("tg-username"),
+      password: localStorage.getItem("tg-password"),
+      _id: booking._id,
+    }
+    const json = JSON.stringify(bodyObject);
+    console.log(`Delete`, json);
+    try {
+      const res = await fetch(config.deleteBookingURL, {
+        method: "POST",
+        body: json,
+      });
+      const result = await res.json();
+      if (res.ok) {
+        reset(); // Reset the form on success
+        setStartDate(null); // Clear the start date
+        setEndDate(null); // Clear the end date
+        console.log("Booking deleted successfully");
+      } else {
+        console.log(`Failed to send message to delete booking: ${result.message}`);
+        setErrorMessage(`Failed to send message to delete booking: ${result.message}`);
+      }
+    } catch (error) {
+      console.log(`Exception: Failed to send message to delete booking: ${error.message}`);
+      setErrorMessage(`Exception: Failed to send message to delete booking: ${error.message}`);
+    }
+    clearBooking();
+    refresh();
+  };
+
+  const onStartDate = (date) => {
+    setStartDate(date);
+    const newEndDate = new Date(date);
+    newEndDate.setDate(newEndDate.getDate() + 7);
+    setEndDate(newEndDate);
+  }
+
   return (
     <div className='form-container space-above'>
-    {isSubmitSuccessful && !errorMessage ? (
-      <h2 className="text-success">Your message has been sent!</h2>
-    ) : null}
-
       <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
         <div className="responsive-form">
           {/* Start Date */}
@@ -130,7 +175,7 @@ export default function AdminBookingForm({booking, refresh}) {
             <ReactDatePicker
               id="startDate"
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={onStartDate}
               dateFormat="yyyy-MM-dd"
               className="form-control"
               placeholderText="Select start date"
@@ -257,6 +302,13 @@ export default function AdminBookingForm({booking, refresh}) {
         <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : (booking ? "Update booking" : "Add booking")}
         </button>
+        {/* Delete Button */}
+        {booking && (
+          <button type="button" className="btn btn-primary btn-primary-branded btn-primary-danger" onClick={onDelete} disabled={isSubmitting}>
+            Delete booking
+          </button>
+        )}
+        {/* Error message */}
         {errorMessage && <div className='error-message'>{errorMessage}</div>}
       </form>
     </div>
