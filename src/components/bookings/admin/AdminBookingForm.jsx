@@ -12,21 +12,14 @@ export default function AdminBookingForm({booking, refresh}) {
     setValue,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
-  } = useForm({
-    // defaultValues: {
-    //   email: booking?.booking?.email || ""
-    // },
-  });
+  } = useForm({});
   
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [bookingToWrite, setBookingToWrite] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    // Dynamically update default values if booking parameter changes
     if (booking) {
-      setBookingToWrite(booking);
       setValue('email', booking.booking?.email ?? '');
       setValue('name', booking.booking?.name ?? '');
       setValue('source', booking.booking?.source ?? '');
@@ -35,10 +28,12 @@ export default function AdminBookingForm({booking, refresh}) {
       if (booking.endDate) {setEndDate(new Date(booking.endDate));}
       setValue('comments', booking.comments ?? '');
       setValue('status', booking.status ?? '');
-
-      // TODO: Set other default values here if needed
     }
   }, [booking, setValue]);
+
+  const removeEmptyFields = (obj) => {
+    return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
+  };
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
@@ -52,54 +47,80 @@ export default function AdminBookingForm({booking, refresh}) {
       return;
     }
 
-    if (startDate < new Date()) {
-      setErrorMessage("Start date must be in the future.");
-      return;
+    let bookingToStore = {
+      _id: booking?._id,
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
+      property: config.location,
+      status: data.status,
+      comments: data.comments,
+      booking: {
+        email: data.email,
+        name: data.name,
+        source: data.source,
+        price: data.price
+      }
+    };
+
+    bookingToStore = removeEmptyFields(bookingToStore);
+    bookingToStore.booking = removeEmptyFields(bookingToStore.booking);
+    const bodyObject = {
+      username: localStorage.getItem("tg-username"),
+      password: localStorage.getItem("tg-password"),
+      booking: bookingToStore
     }
-
-    const formData = new FormData();
-    formData.append("startDate", startDate.toISOString());
-    formData.append("endDate", endDate.toISOString());
-    
-    Object.entries(data).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-
-    let object = Object.fromEntries(formData);
-    object.subject = 
-      `Booking request from ${object.name ? object.name : "unknown"} for Thieves Garden`;
-    object.redirect = "https://www.thievesgarden.co.uk/";
-    const json = JSON.stringify(object);
+   
+    const json = JSON.stringify(bodyObject);
     
     console.log(`Submit`, json);
     
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
-      });
-      const result = await res.json();
-      if (res.ok && result.success) {
-        reset(); // Reset the form on success
-        setStartDate(null); // Clear the start date
-        setEndDate(null); // Clear the end date
-      } else {
-        setErrorMessage(`Failed to send message: ${result.message}`);
+    if (booking) {
+      try {
+        const res = await fetch(config.updateBookingURL, {
+          method: "POST",
+          body: json,
+        });
+        const result = await res.json();
+        if (res.ok) {
+          reset(); // Reset the form on success
+          setStartDate(null); // Clear the start date
+          setEndDate(null); // Clear the end date
+        } else {
+          setErrorMessage(`Failed to send message to update booking: ${result.message}`);
+        }
+      } catch (error) {
+        setErrorMessage(`Failed to send message to update booking:: ${error.message}`);
       }
-    } catch (error) {
-      setErrorMessage(`"Failed to send message": ${error.message}`);
+    } else {
+      try {
+        const res = await fetch(config.addBookingURL, {
+          method: "POST",
+          body: json,
+        });
+        const result = await res.json();
+        if (res.ok) {
+          reset(); // Reset the form on success
+          setStartDate(null); 
+          setEndDate(null); 
+          console.log("Booking added successfully");
+        } else {
+          console.log(`Failed to send message to add booking: ${result.message}`);
+          setErrorMessage(`Failed to send message to add booking: ${result.message}`);
+        }
+      } catch (error) {
+        console.log(`Exception: Failed to send message to add booking: ${error.message}`);
+        setErrorMessage(`Exception: Failed to send message to add booking: ${error.message}`);
+      }
     }
+    refresh(); 
   };
   
   return (
     <div className='form-container space-above'>
     {isSubmitSuccessful && !errorMessage ? (
       <h2 className="text-success">Your message has been sent!</h2>
-    ) : (
+    ) : null}
+
       <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
         <div className="responsive-form">
           {/* Start Date */}
@@ -214,7 +235,7 @@ export default function AdminBookingForm({booking, refresh}) {
               id="price"
               type="text"
               className={`form-control ${errors.price ? 'is-invalid' : ''}`}
-              {...register('price', { required: "Please enter a price" })}
+              {...register('price')}
             />
             {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
           </div>
@@ -238,7 +259,6 @@ export default function AdminBookingForm({booking, refresh}) {
         </button>
         {errorMessage && <div className='error-message'>{errorMessage}</div>}
       </form>
-    )}
     </div>
   );
 }
