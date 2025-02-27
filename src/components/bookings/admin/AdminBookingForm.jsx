@@ -159,9 +159,11 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
 
   const onStartDate = (date) => {
     setStartDate(date);
-    const newEndDate = new Date(date);
-    newEndDate.setDate(newEndDate.getDate() + 7);
-    setEndDate(newEndDate);
+    if (!endDate) {
+      const newEndDate = new Date(date);
+      newEndDate.setDate(newEndDate.getDate() + 7);
+      setEndDate(newEndDate);
+    };
   }
 
   return (
