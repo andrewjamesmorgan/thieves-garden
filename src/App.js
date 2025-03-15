@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Facilities from './pages/Facilities';
 import Location from './pages/Location';
 import Login from './pages/Login';
+import Logout from './pages/Logout';
 
 export const UserContext = createContext(null);
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="facilities" element={<Facilities />} />
             <Route path="location" element={<Location />} />
             <Route path="login" element={<Login />} />
+            <Route path="logout" element={<Logout />} />
             <Route path="*" element={<Home />} />
             </Route>
           </Routes>

@@ -16,7 +16,7 @@ export default function BookingsInfo({bookings, selectBooking}) {
               <BookingInfo key={index} booking={booking} />
             </div>
           ))}
-          </div>
+        </div>
       </div>
     </>
   );

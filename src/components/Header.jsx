@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import '../css/topnav.css';
 
 export default function Header() {
   const pathName = useLocation().pathname;
   const [showingBurger, setShowingBurger] = useState(false);
+  const [username] = useState(localStorage.getItem("tg-username"));
+  const [password] = useState(localStorage.getItem("tg-password"));
+  const [isAdmin, setIsAdmin] = useState(false);
 
   function selectMenu() {
     setShowingBurger(!showingBurger);
@@ -17,6 +20,10 @@ export default function Header() {
       setShowingBurger(false);
     }
   }
+
+  useEffect(() => {
+    setIsAdmin(username && password);
+  }, [username, password]);
 
   return (
     <div className={showingBurger ? "topnav responsive" : "topnav"} id="myTopnav">
@@ -45,6 +52,9 @@ export default function Header() {
         <Link to="/contact"
           onClick={hideBurgerMenu}
           className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
+        {isAdmin && <Link to="/logout"
+          onClick={hideBurgerMenu}
+          className={pathName === "/logout" ? "active" : "not-active"}>Log out</Link>}
         {/* eslint-disable-next-line */}
         <a href="#" className="icon" onClick={selectMenu}>
           <i className="fa fa-bars"></i>
