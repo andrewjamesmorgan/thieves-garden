@@ -83,8 +83,9 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
         const result = await res.json();
         if (res.ok) {
           reset(); // Reset the form on success
-          setStartDate(null); // Clear the start date
-          setEndDate(null); // Clear the end date
+          setStartDate(null);
+          setEndDate(null);
+          clearBooking();
         } else {
           setErrorMessage(`Failed to send message to update booking: ${result.message}`);
         }
@@ -102,6 +103,7 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
           reset(); // Reset the form on success
           setStartDate(null);
           setEndDate(null);
+          clearBooking();
           console.log("Booking added successfully");
         } else {
           console.log(`Failed to send message to add booking: ${result.message}`);
@@ -120,7 +122,6 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
       return;
     }
 
-    // Show confirmation dialog
     const confirmed = window.confirm("Are you sure you want to delete this booking?");
     if (!confirmed) {
       return;
@@ -141,9 +142,9 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
       });
       const result = await res.json();
       if (res.ok) {
-        reset(); // Reset the form on success
-        setStartDate(null); // Clear the start date
-        setEndDate(null); // Clear the end date
+        reset();
+        setStartDate(null);
+        setEndDate(null);
         console.log("Booking deleted successfully");
       } else {
         console.log(`Failed to send message to delete booking: ${result.message}`);

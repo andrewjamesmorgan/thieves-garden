@@ -19,11 +19,13 @@ export default function BookingInfo({ booking }) {
       <div id='booking-info' className={`booking-info ${bookingStatus()}`}>
         <p><b>{formatDate(booking.startDate)} → {formatDate(booking.endDate)}</b></p>
         <p>
-          {booking.booking && booking.booking.name && <span>{booking.booking.name}</span>}
-          {booking.booking && booking.booking.source && <span> ({booking.booking.source})</span>}
-          {booking.booking && booking.booking.price && <span> {booking.booking.price}</span>}
+          {booking?.booking?.name && <span>{booking.booking.name}</span>}
+          {booking?.booking?.source && <span> ({booking.booking.source})</span>}
+          {booking?.booking?.price && (
+            <span> £{booking.booking.price.toLocaleString('en-GB', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+          )}
         </p>
-        {booking.booking && booking.booking.email && <p> &lt;{booking.booking.email}&gt;</p>}
+        {booking?.booking?.email && <p> &lt;{booking.booking.email}&gt;</p>}
         {booking.comments && <p><i>— {booking.comments} —</i></p>}
       </div>
     </>
