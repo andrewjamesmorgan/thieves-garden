@@ -201,13 +201,12 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
 
           {/* Email Field */}
           <div className="med-field medium-field">
-            <label htmlFor="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">Email (optional)</label>
             <input
               id="email"
               type="email"
               className={`form-control ${errors.email ? 'is-invalid' : ''} centered-input`}
               {...register('email', {
-                required: "Email address required",
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "Valid email address required",
