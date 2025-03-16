@@ -597,6 +597,22 @@ div.bookings-info {
   margin-right: 50px;
 }
 
+.medium-field {
+  max-width: 300px;
+}
+
+.narrow-field {
+  max-width: 150px;
+}
+
+.very-narrow-field {
+  max-width: 80px;
+}
+
+.centered-input {
+  text-align: center;
+} 
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   

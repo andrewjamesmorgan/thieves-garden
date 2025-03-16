@@ -87,7 +87,7 @@ export default function BookingForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
         <div className="responsive-form">
           {/* Start Date */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="startDate" className="form-label">Start Date</label>
             <br/>
             <ReactDatePicker
@@ -95,13 +95,13 @@ export default function BookingForm() {
               selected={startDate}
               onChange={onStartDate}
               dateFormat="yyyy-MM-dd"
-              className="form-control"
+              className="form-control centered-input"
               placeholderText="Select start date"
             />
           </div>
 
           {/* End Date */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="endDate" className="form-label">End Date</label>
             <br/>
             <ReactDatePicker
@@ -109,18 +109,18 @@ export default function BookingForm() {
               selected={endDate}
               onChange={(date) => setEndDate(date)}
               dateFormat="yyyy-MM-dd"
-              className="form-control"
+              className="form-control centered-input"
               placeholderText="Select end date"
             />
           </div>
 
           {/* Email Field */}
-          <div className="med-field">
+          <div className="med-field medium-field">
             <label htmlFor="email" className="form-label">Email</label>
             <input
               id="email"
               type="email"
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.email ? 'is-invalid' : ''} centered-input`}
               {...register('email', {
                 required: "Email address required",
                 pattern: {
@@ -133,12 +133,12 @@ export default function BookingForm() {
           </div>
 
           {/* Optional Phone Number Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field medium-field">
             <label htmlFor="phone" className="form-label">Phone number (optional)</label>
             <input
               id="phone"
               type="tel"
-              className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.phone ? 'is-invalid' : ''} centered-input`}
               {...register('phone', {
                 pattern: {
                   value: /^\+?[0-9]{7,15}$/,
@@ -150,12 +150,12 @@ export default function BookingForm() {
           </div>
 
           {/* Name Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field medium-field">
             <label htmlFor="name" className="form-label">Name</label>
             <input
               id="name"
               type="text"
-              className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.name ? 'is-invalid' : ''} centered-input`}
               {...register('name', { required: "Please enter a name" })}
             />
             {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}

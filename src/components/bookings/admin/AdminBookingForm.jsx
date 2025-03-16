@@ -171,7 +171,7 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
       <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
         <div className="responsive-form">
           {/* Start Date */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="startDate" className="form-label">Start Date</label>
             <br/>
             <ReactDatePicker
@@ -179,13 +179,13 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
               selected={startDate}
               onChange={onStartDate}
               dateFormat="yyyy-MM-dd"
-              className="form-control"
+              className="form-control centered-input"
               placeholderText="Select start date"
             />
           </div>
 
           {/* End Date */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="endDate" className="form-label">End Date</label>
             <br/>
             <ReactDatePicker
@@ -193,18 +193,18 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
               selected={endDate}
               onChange={(date) => setEndDate(date)}
               dateFormat="yyyy-MM-dd"
-              className="form-control"
+              className="form-control centered-input"
               placeholderText="Select end date"
             />
           </div>
 
           {/* Email Field */}
-          <div className="med-field">
+          <div className="med-field medium-field">
             <label htmlFor="email" className="form-label">Email</label>
             <input
               id="email"
               type="email"
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.email ? 'is-invalid' : ''} centered-input`}
               {...register('email', {
                 required: "Email address required",
                 pattern: {
@@ -217,12 +217,12 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
           </div>
 
           {/* Optional Phone Number Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field medium-field">
             <label htmlFor="phone" className="form-label">Phone number (optional)</label>
             <input
               id="phone"
               type="tel"
-              className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.phone ? 'is-invalid' : ''} centered-input`}
               {...register('phone', {
                 pattern: {
                   value: /^\+?[0-9]{7,15}$/,
@@ -234,19 +234,19 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
           </div>
 
           {/* Name Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field medium-field">
             <label htmlFor="name" className="form-label">Name</label>
             <input
               id="name"
               type="text"
-              className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.name ? 'is-invalid' : ''} centered-input`}
               {...register('name', { required: "Please enter a name" })}
             />
             {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
           </div>
 
           {/* Source Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="source" className="form-label">Source</label>
             <select
               id="source"
@@ -261,11 +261,11 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
           </div>
 
           {/* Status Field */}
-          <div className="mb-3 med-field">
+          <div className="mb-3 med-field narrow-field">
             <label htmlFor="status" className="form-label">Status</label>
             <select
               id="status"
-              className={`form-control ${errors.status ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.status ? 'is-invalid' : ''} centered-input`}
               {...register('status', { required: "Please select a status" })}
             >
               <option value="">Select status</option>
@@ -276,12 +276,12 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
           </div>
 
           {/* Price Field */}
-          <div className="mb-3 med-field">
-            <label htmlFor="price" className="form-label">Price</label>
+          <div className="mb-3 med-field very-narrow-field">
+            <label htmlFor="price" className="form-label">Price (£)</label>
             <input
               id="price"
               type="text"
-              className={`form-control ${errors.price ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.price ? 'is-invalid' : ''} centered-input`}
               {...register('price')}
             />
             {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
