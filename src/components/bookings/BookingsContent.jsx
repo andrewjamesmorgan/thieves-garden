@@ -6,12 +6,37 @@ import AdminBookingForm from "./admin/AdminBookingForm";
 import Calendar from './Calendar';
 
 function checkBooking(date, bookingData) {
-  let dayBooking = { status: 'available'};
+  // Create a date at midnight UTC for the date we're checking
+  const utcDate = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+  let dayBooking = { status: 'available' };
+
   bookingData.forEach((booking) => {
-    if (date >= new Date(booking.startDate) && date < new Date(booking.endDate)) {
+    // Parse the dates from the booking data
+    const startDateObj = new Date(booking.startDate);
+    const endDateObj = new Date(booking.endDate);
+    
+    // Create UTC timestamps for midnight on the start date
+    const startDate = Date.UTC(
+      startDateObj.getUTCFullYear(),
+      startDateObj.getUTCMonth(), 
+      startDateObj.getUTCDate()
+    );
+    
+    // Create UTC timestamp for midnight on the end date
+    // Note: No +1 here - we want to exclude the end date
+    const endDate = Date.UTC(
+      endDateObj.getUTCFullYear(),
+      endDateObj.getUTCMonth(),
+      endDateObj.getUTCDate()
+    );
+
+    // Compare: date >= startDate AND date < endDate
+    // This treats the end date as exclusive (checkout day)
+    if (utcDate >= startDate && utcDate < endDate) {
       dayBooking = booking;
     }
   });
+
   return dayBooking;
 }
 
@@ -21,49 +46,51 @@ function generateCalendarData(years, bookingData) {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  return years.map(year => {
+  return years.map((year) => {
     const today = new Date();
-    if (year >= today.getFullYear()) {
+    if (year >= today.getUTCFullYear()) {
       const months = [];
-      
+
       for (let month = 0; month < 12; month++) {
-        if (year > today.getFullYear() || 
-            (year === today.getFullYear() && month >= today.getMonth())) {
+        if (
+          year > today.getUTCFullYear() ||
+          (year === today.getUTCFullYear() && month >= today.getUTCMonth())
+        ) {
           const days = [];
           const date = new Date(Date.UTC(year, month, 1));
 
           // Add filler days for the first week
-          for (let fillerDay = date.getDay(); fillerDay > 0; fillerDay--) {
+          for (let fillerDay = date.getUTCDay(); fillerDay > 0; fillerDay--) {
             days.push({
               dayOfMonth: 1 - fillerDay,
-              status: "filler"
+              status: "filler",
             });
           }
 
           // Add actual days of the month
-          while (date.getMonth() === month) {
+          while (date.getUTCMonth() === month) {
             days.push({
-              dayOfMonth: date.getDate(),
-              dayOfWeek: date.getDay(),
-              status: checkBooking(date, bookingData)
+              dayOfMonth: date.getUTCDate(),
+              dayOfWeek: date.getUTCDay(),
+              status: checkBooking(date, bookingData),
             });
-            date.setDate(date.getDate() + 1);
+            date.setUTCDate(date.getUTCDate() + 1);
           }
 
           months.push({
             monthName: monthNames[month],
-            days
+            days,
           });
         }
       }
 
       return {
         year,
-        months
+        months,
       };
     }
     return null;
-  }).filter(yearData => yearData !== null);
+  }).filter((yearData) => yearData !== null);
 }
 
 async function fetchBookings() {
