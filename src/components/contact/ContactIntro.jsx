@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function ContactIntro() {
   return (
     <>
@@ -12,6 +14,7 @@ export default function ContactIntro() {
       <div className='responsive-text'>
         <h2>Send us a message, and we'll get back to you as soon as we can.</h2>
       </div>
+      <BookNow />
     </>
   );
 }

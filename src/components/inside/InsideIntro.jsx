@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function InsideIntro() {
   return (
     <>
@@ -14,6 +16,7 @@ export default function InsideIntro() {
         <p>The ground floor is a large, open-plan room. There's a double bed, and a sofa bed.</p>
         <p>Upstairs is a kitchen, bathroom, and a dining/study area.</p>
       </div>
+      <BookNow />
     </>
   );
 }

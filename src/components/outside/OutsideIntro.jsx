@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function OutsideIntro() {
   return (
     <>
@@ -13,6 +15,7 @@ export default function OutsideIntro() {
         <h2>What's available outside the apartment</h2> 
         <p>Outdoor dining on your terrace, shared laundry, and plenty of on-street parking.</p>
       </div>
+      <BookNow />
     </>
   );
 }

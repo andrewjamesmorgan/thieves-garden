@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function PricesIntro() {
   return (
     <>
@@ -12,6 +14,7 @@ export default function PricesIntro() {
       <div className='responsive-text'>
         <h2>Rental prices are per-week, with discounts for longer stays.</h2>
       </div>
+      <BookNow />
     </>
   );
 }

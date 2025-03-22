@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function HomeIntro() {
   return (
     <>
@@ -17,6 +19,7 @@ export default function HomeIntro() {
           <p>We offer  flexible letting terms so we're ideal if you're looking to buy a new home and need somewhere to stay that doesn't insist on long notice periods.</p>
         </div>
       </div>
+      <BookNow />
     </>
   );
 }

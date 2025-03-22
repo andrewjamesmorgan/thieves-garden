@@ -1,3 +1,5 @@
+import BookNow from "../buttons/BookNow";
+
 export default function LocationIntro() {
   return (
     <>
@@ -13,6 +15,7 @@ export default function LocationIntro() {
         <h2>Where to find Thieves Garden</h2>
         <p>Thieves Garden is located in a quiet area, on the western side of Maidenhead.</p>
       </div>
+      <BookNow />
     </>
   );
 }
