@@ -8,7 +8,7 @@ export default function WifiCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/facilities/maidenhead-wifi.png"
+        imageSrc="../../images/facilities/maidenhead-wifi.jpg"
         alt="Wifi symbols"
         action={action}
         body={body}

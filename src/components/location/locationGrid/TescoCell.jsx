@@ -9,7 +9,7 @@ export default function TescoCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/location/maidenhead-tesco.jpeg"
+        imageSrc="../../images/location/maidenhead-tesco.jpg"
         alt="The entrance to Tesco Metro"
         action={action}
         body={body}

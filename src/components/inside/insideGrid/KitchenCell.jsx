@@ -9,7 +9,7 @@ export default function KitchenCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/inside/maidenhead-kitchen.jpeg"
+        imageSrc="../../images/inside/maidenhead-kitchen.jpg"
         alt="kitchen containing oven, fridge-freezer, sink, microwave and kettle"
         action={action}
         body={body}

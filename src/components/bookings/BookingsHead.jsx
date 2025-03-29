@@ -30,7 +30,7 @@ export default function BookingsHead() {
           property="og:description"
           content="Book your stay at Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpg" />
         <meta property="og:url" content="https://thievesgarden.co.uk/book" /> 
         <meta property="og:locale" content="en_GB" />
 

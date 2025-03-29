@@ -9,7 +9,7 @@ export default function HeatingCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/facilities/maidenhead-cleaner.png"
+        imageSrc="../../images/facilities/maidenhead-cleaner.jpg"
         alt="Cartoon cleaner mopping the floor"
         action={action}
         body={body}

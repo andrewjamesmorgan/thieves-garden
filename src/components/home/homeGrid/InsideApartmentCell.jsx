@@ -9,7 +9,7 @@ export default function InsideApartmentCell({action}) {
   
   return (
     <InfoBox 
-        imageSrc="../../images/inside/maidenhead-lounge-bed.jpeg"
+        imageSrc="../../images/inside/maidenhead-lounge-bed.jpg"
         alt=""
         action={action}
         route="/inside_apartment"

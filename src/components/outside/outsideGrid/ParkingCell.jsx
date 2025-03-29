@@ -10,7 +10,7 @@ export default function ParkingCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/outside/maidenhead-parking.jpeg"
+        imageSrc="../../images/outside/maidenhead-parking.jpg"
         alt="Wide, tree-lined street with lots of free parking spaces on either side."
         action={action}
         body={body}

@@ -6,7 +6,7 @@ export default function FacilitiesIntro() {
       <div id='facilities-intro' className='banner-image-text'>
         <h1>Facilities & Services</h1>
         <img
-          src="../../images/facilities/maidenhead-facilities-wide.png"
+          src="../../images/facilities/maidenhead-facilities-wide.jpg"
           alt="Nothing too useful. Mix of TV, WiFi, parking, cooking. cleaning, etc."
           className='full-width-image'
         />  

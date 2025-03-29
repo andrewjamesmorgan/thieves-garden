@@ -6,7 +6,7 @@ export default function LocationIntro() {
       <div id='contact-intro' className='banner-image-text'>
         <h1>Location</h1>
         <img
-          src="../../images/location/maidenhead-sat-view.png"
+          src="../../images/location/maidenhead-sat-view.jpg"
           alt="Satelit immage showing Thieves Garden on Boyn Hill Road"
           className='full-width-image'
         />

@@ -6,7 +6,7 @@ export default function OutsideIntro() {
       <div id='outside-intro' className='banner-image-text'>
         <h1>Outside the apartment</h1>
         <img
-          src="../../images/outside/maidenhead-apartment.jpeg"
+          src="../../images/outside/maidenhead-apartment.jpg"
           alt="Brick 2-floor building, sat amongst a garden. Terrace and picnic bench in the foreground"
           className='full-width-image'
         />

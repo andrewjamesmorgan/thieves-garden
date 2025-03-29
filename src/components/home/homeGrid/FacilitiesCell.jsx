@@ -9,7 +9,7 @@ export default function FacilitiesCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/facilities/maidenhead-facilities.png"
+        imageSrc="../../images/facilities/maidenhead-facilities.jpg"
         alt=""
         action={action}
         route="/facilities"

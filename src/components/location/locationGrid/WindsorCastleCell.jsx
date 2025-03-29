@@ -9,7 +9,7 @@ export default function WindsorCastleCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/location/maidenhead-windsor-castle.jpeg"
+        imageSrc="../../images/location/maidenhead-windsor-castle.jpg"
         alt="The front and beer garden of the Windsor Castle pub"
         action={action}
         body={body}

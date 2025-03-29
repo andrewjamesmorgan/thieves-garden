@@ -6,7 +6,7 @@ export default function PricesIntro() {
       <div id='prices-intro' className='banner-image-text'>
         <h1>Rental prices</h1>
         <img
-          src="../../images/prices/maidenhead-apartment-prices-wide.png"
+          src="../../images/prices/maidenhead-apartment-prices-wide.jpg"
           alt="Rental prices, show on a calendar/cash register"
           className='full-width-image'
         />

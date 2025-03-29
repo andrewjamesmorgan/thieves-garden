@@ -9,7 +9,7 @@ export default function AVCell({action}) {
   
   return (
     <InfoBox 
-        imageSrc="../../images/facilities/maidenhead-tv.png"
+        imageSrc="../../images/facilities/maidenhead-tv.jpg"
         alt="TV, satelite dish, remote control and Netflix logo"
         action={action}
         body={body}

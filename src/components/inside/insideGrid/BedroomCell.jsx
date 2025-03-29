@@ -9,7 +9,7 @@ export default function BedroomCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/inside/maidenhead-bedroom.jpeg"
+        imageSrc="../../images/inside/maidenhead-bedroom.jpg"
         alt="Double bed and TV"
         action={action}
         body={body}

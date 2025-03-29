@@ -11,7 +11,7 @@ export default function LaundryCell({action}) {
   
   return (
     <InfoBox 
-        imageSrc="../../images/laundry/maidenhead-laundry.jpeg"
+        imageSrc="../../images/laundry/maidenhead-laundry.jpg"
         alt="Black door, halfway up some outdoor steps."
         action={action}
         body={body}

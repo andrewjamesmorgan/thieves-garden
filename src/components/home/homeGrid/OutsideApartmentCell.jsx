@@ -10,7 +10,7 @@ export default function OutsideApartmentCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/outside/maidenhead-terrace.jpeg"
+        imageSrc="../../images/outside/maidenhead-terrace.jpg"
         alt=""
         action={action}
         route="/outside_apartment"

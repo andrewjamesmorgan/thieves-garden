@@ -30,7 +30,7 @@ export default function InsideHead() {
           property="og:description"
           content="Discover what's available inside Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpg" />
         <meta property="og:url" content="https://thievesgarden.co.uk/#/inside" /> 
         <meta property="og:locale" content="en_GB" />
 

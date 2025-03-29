@@ -10,7 +10,7 @@ export default function DiningCell({action}) {
   
   return (
     <InfoBox 
-        imageSrc="../../images/dining/maidenhead-dining-study.jpeg"
+        imageSrc="../../images/dining/maidenhead-dining-study.jpg"
         alt="Light room, lit by daylight through the window and an overhead lamp. Glass-topped table and four chairs. A pair of pictures are hanging from the wall."
         action={action}
         body={body}

@@ -9,7 +9,7 @@ export default function PondHouseCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/location/maidenhead-pond-house.jpeg"
+        imageSrc="../../images/location/maidenhead-pond-house.jpg"
         alt="The front and beer garden of the Pond House pub"
         action={action}
         body={body}

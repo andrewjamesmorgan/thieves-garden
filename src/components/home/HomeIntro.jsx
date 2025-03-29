@@ -6,7 +6,7 @@ export default function HomeIntro() {
       <div id='home-intro' className='banner-image-text'>
         <h1>Thieves Garden</h1>
         <img
-          src="../../images/outside/maidenhead-apartment.jpeg"
+          src="../../images/outside/maidenhead-apartment.jpg"
           alt=""
           className='full-width-image'
         />

@@ -613,6 +613,10 @@ div.bookings-info {
   text-align: center;
 } 
 
+div.infobox-body {
+  margin-top: 10px;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   

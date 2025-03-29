@@ -9,7 +9,7 @@ export default function TerraceCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/outside/maidenhead-terrace.jpeg"
+        imageSrc="../../images/outside/maidenhead-terrace.jpg"
         alt="Outdoor terrace with picnic table."
         action={action}
         body={body}

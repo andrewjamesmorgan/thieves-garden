@@ -14,7 +14,7 @@ export default function LocationCell({ action }) {
 
   return (
     <InfoBox
-      imageSrc="../../images/location/maidenhead-map.png"
+      imageSrc="../../images/location/maidenhead-map.jpg"
       alt="Map with Maidenhead in the center. Reading to the west, London to the east"
       action={action}
       route="/location"

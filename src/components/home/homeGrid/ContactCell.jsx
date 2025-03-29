@@ -9,7 +9,7 @@ export default function ContactCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/contact/maidenhead-post-box.jpeg"
+        imageSrc="../../images/contact/maidenhead-post-box.jpg"
         alt="Traditional, red, British postbox. Set on grass, with a wooden fence and trees behind it"
         action={action}
         route="/contact"

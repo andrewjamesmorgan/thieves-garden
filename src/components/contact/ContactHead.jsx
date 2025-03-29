@@ -30,7 +30,7 @@ export default function ContactHead() {
           property="og:description"
           content="Contact the owners of Thieves Garden, a serviced apartment in Maidenhead"
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpeg" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/maidenhead-apartment-OG.jpg" />
         <meta property="og:url" content="https://thievesgarden.co.uk/contact" /> 
         <meta property="og:locale" content="en_GB" />
 
