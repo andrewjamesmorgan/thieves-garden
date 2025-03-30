@@ -8,6 +8,8 @@ export default function Header() {
   const [username] = useState(localStorage.getItem("tg-username"));
   const [password] = useState(localStorage.getItem("tg-password"));
   const [isAdmin, setIsAdmin] = useState(false);
+  const [tgTenant] = useState(localStorage.getItem("tg-tenant"));
+  const [isTenant, setIsTenant] = useState(false);
 
   function selectMenu() {
     setShowingBurger(!showingBurger);
@@ -22,8 +24,9 @@ export default function Header() {
   }
 
   useEffect(() => {
-    setIsAdmin(username && password);
-  }, [username, password]);
+    setIsAdmin(!!(username && password)); // Ensure isAdmin is a boolean
+    setIsTenant(tgTenant === "true");
+  }, [username, password, tgTenant]);
 
   return (
     <div className={showingBurger ? "topnav responsive" : "topnav"} id="myTopnav">
@@ -52,6 +55,9 @@ export default function Header() {
         <Link to="/contact"
           onClick={hideBurgerMenu}
           className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
+        {isTenant && <Link to="/stay"
+          onClick={hideBurgerMenu}
+          className={pathName === "/stay" ? "active" : "not-active"}>Your stay</Link>}
         {isAdmin && <Link to="/logout"
           onClick={hideBurgerMenu}
           className={pathName === "/logout" ? "active" : "not-active"}>Log out</Link>}
