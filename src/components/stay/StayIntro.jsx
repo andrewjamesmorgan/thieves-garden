@@ -1,22 +1,19 @@
-import BookNow from "../buttons/BookNow";
-
 export default function StayIntro() {
   return (
     <>
       <div id='stay-intro' className='banner-image-text'>
-        <h1>During your stay</h1>
+        <h1>Your stay with us</h1>
         <img
-          src="../../images/facilities/maidenhead-facilities-wide.jpg"
+          src="../../images/stay/tenant-information-wide.jpg"
           alt="Nothing too useful. Mix of TV, WiFi, parking, cooking. cleaning, etc."
           className='full-width-image'
         />  
       </div>
       <div className='responsive-text'>
-        <h2>Everything you need for a comfortable stay</h2>
-        <p>Our aim is to provide everything you need during your stay, all included in the headline price.</p>
-        <p>That includes WiFi, streaming TV, somewhere to cook, linen and cleaning, parking, ...</p>
+        <h2>Useful information during your stay</h2>
+        <p>The purpose of this page is to provide you with information about the apartment and area that could be useful while you're staying in the apartment.</p>
+        <p>If you don't find what you need then please let us know, and we'll do whatever we can to help.</p>
       </div>
-      <BookNow />
     </>
   );
 }

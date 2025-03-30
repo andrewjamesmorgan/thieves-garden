@@ -4,7 +4,7 @@ export default function AVCell({action}) {
   const body = (<>
     <h3>TV</h3>
     <p>In the lounge/bedroom, there's a television.</p>
-    <p>You have access to free-to-air satelite channels, as well as several streaming services such as Netflix.</p>
+    <p>You have access to several streaming services such as Netflix.</p>
   </>);
   
   return (
