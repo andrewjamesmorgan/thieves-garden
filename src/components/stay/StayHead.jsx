@@ -30,8 +30,8 @@ export default function StayHead() {
           property="og:description"
           content="Essential information for tenants staying at Thieves Garden, a serviced apartment in Maidenhead. Learn about facilities, guidelines, and contact details."
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/tenant-info-OG.jpg" />
-        <meta property="og:url" content="https://thievesgarden.co.uk/#/tenant-info" /> 
+        <meta property="og:image" content="https://thievesgarden.co.uk/images/maidenhead-apartment-OG.jpg" />
+        <meta property="og:url" content="https://thievesgarden.co.uk/#/stay" /> 
         <meta property="og:locale" content="en_GB" />
 
         {/* Twitter */}
@@ -41,7 +41,7 @@ export default function StayHead() {
           name="twitter:description"
           content="Find all the information you need for your stay at Thieves Garden, a serviced apartment in Maidenhead."
         />
-        <meta name="twitter:image" content="https://thievesgarden.co.uk/tenant-info-OG.jpg" />
+        <meta name="twitter:image" content="https://thievesgarden.co.uk/images/maidenhead-apartment-OG.jpg" />
       </Helmet>
     </>
   );

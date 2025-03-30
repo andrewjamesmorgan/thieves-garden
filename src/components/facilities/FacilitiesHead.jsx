@@ -30,7 +30,7 @@ export default function FacilitiesHead() {
           property="og:description"
           content="Discover the facilities at Thieves Garden, a serviced apartment in Maidenhead. Enjoy amenities such as TV, Wi-Fi, a fully equipped kitchen, shower, cleaner, bed linen, and laundry services."
         />
-        <meta property="og:image" content="https://thievesgarden.co.uk/facilities-OG.jpg" />
+        <meta property="og:image" content="https://thievesgarden.co.uk/images/maidenhead-apartment-OG.jpg" />
         <meta property="og:url" content="https://thievesgarden.co.uk/#/facilities" /> 
         <meta property="og:locale" content="en_GB" />
 
@@ -41,7 +41,7 @@ export default function FacilitiesHead() {
           name="twitter:description"
           content="Learn about the facilities at Thieves Garden, including TV, Wi-Fi, kitchen, shower, cleaner, bed linen, and laundry services."
         />
-        <meta name="twitter:image" content="https://thievesgarden.co.uk/facilities-OG.jpg" />
+        <meta name="twitter:image" content="https://thievesgarden.co.uk/images/maidenhead-apartment-OG.jpg" />
       </Helmet>
     </>
   );
