@@ -25,6 +25,19 @@ export default function StayContent() {
     setModalAlt(null);
   }
 
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        dismisModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className='space-above'>
       <StayIntro />
