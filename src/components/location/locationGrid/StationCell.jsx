@@ -13,6 +13,8 @@ export default function StationCell({action}) {
         alt="The front entrance of Maidenhead train station"
         action={action}
         body={body}
+        centerX = {40}
+        centerY = {40}
     />
   );
 }

@@ -14,6 +14,8 @@ export default function DiningCell({action}) {
         alt="Light room, lit by daylight through the window and an overhead lamp. Glass-topped table and four chairs. A pair of pictures are hanging from the wall."
         action={action}
         body={body}
+        centerX = {60}
+        centerY = {60}
     />
   );
 }

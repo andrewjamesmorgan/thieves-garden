@@ -13,6 +13,8 @@ export default function BedroomCell({action}) {
         alt="Double bed and TV"
         action={action}
         body={body}
+        centerX = {100}
+        centerY = {60}
     />
   );
 }

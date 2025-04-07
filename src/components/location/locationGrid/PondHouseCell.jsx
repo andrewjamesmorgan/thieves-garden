@@ -13,6 +13,8 @@ export default function PondHouseCell({action}) {
         alt="The front and beer garden of the Pond House pub"
         action={action}
         body={body}
+        centerX = {40}
+        centerY = {50}
     />
   );
 }

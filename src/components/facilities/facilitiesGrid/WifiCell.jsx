@@ -12,6 +12,8 @@ export default function WifiCell({action}) {
         alt="Wifi symbols"
         action={action}
         body={body}
+        centerX = {40}
+        centerY = {50}
     />
   );
 }

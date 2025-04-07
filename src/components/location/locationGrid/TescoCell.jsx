@@ -13,6 +13,8 @@ export default function TescoCell({action}) {
         alt="The entrance to Tesco Metro"
         action={action}
         body={body}
+        centerX = {30}
+        centerY = {50}
     />
   );
 }

@@ -13,6 +13,8 @@ export default function LoungeCell({action}) {
         alt="Beige sofa with cushoins. Coffee table. TV. Stairs leading upstairs."
         action={action}
         body={body}
+        centerX = {30}
+        centerY = {60}
     />
   );
 }

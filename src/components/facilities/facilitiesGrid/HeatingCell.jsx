@@ -13,6 +13,8 @@ export default function HeatingCell({action}) {
         alt="Abstract arrangement, including a radiator"
         action={action}
         body={body}
+        centerX = {50}
+        centerY = {65}
     />
   );
 }

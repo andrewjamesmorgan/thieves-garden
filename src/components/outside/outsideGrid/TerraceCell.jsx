@@ -13,6 +13,8 @@ export default function TerraceCell({action}) {
         alt="Outdoor terrace with picnic table."
         action={action}
         body={body}
+        centerX = {30}
+        centerY = {50}
     />
   );
 }

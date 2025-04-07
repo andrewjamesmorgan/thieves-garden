@@ -16,6 +16,8 @@ export default function LaundryCell({action}) {
         alt="Black door, halfway up some outdoor steps."
         action={action}
         body={body}
+        centerX = {40}
+        centerY = {50}
     />
   );
 }

@@ -14,6 +14,8 @@ export default function InsideApartmentCell({action}) {
         action={action}
         route="/inside_apartment"
         body={body}
+        centerX = {50}
+        centerY = {60}
     />
   );
 }

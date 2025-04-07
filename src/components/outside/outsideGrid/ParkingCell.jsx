@@ -14,6 +14,8 @@ export default function ParkingCell({action}) {
         alt="Wide, tree-lined street with lots of free parking spaces on either side."
         action={action}
         body={body}
+        centerX = {60}
+        centerY = {60}
     />
   );
 }

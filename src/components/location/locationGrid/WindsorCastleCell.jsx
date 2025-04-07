@@ -13,6 +13,8 @@ export default function WindsorCastleCell({action}) {
         alt="The front and beer garden of the Windsor Castle pub"
         action={action}
         body={body}
+        centerX = {30}
+        centerY = {50}
     />
   );
 }
