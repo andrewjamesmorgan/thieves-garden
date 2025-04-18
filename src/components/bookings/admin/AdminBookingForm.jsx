@@ -47,10 +47,14 @@ export default function AdminBookingForm({ booking, refresh, clearBooking }) {
       return;
     }
 
+    // Add 12 hours to startDate and endDate to cope with DST
+    const startDatePlus12 = new Date(startDate.getTime() + 12 * 60 * 60 * 1000);
+    const endDatePlus12 = new Date(endDate.getTime() + 12 * 60 * 60 * 1000);
+
     let bookingToStore = {
       _id: booking?._id,
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString(),
+      startDate: startDatePlus12.toISOString(),
+      endDate: endDatePlus12.toISOString(),
       property: config.location,
       status: data.status,
       comments: data.comments,
