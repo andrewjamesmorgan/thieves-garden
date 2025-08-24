@@ -9,7 +9,7 @@ export default function KitchenCell({action}) {
   const english = `
     <h3>Cooking</h3>
     <p>Inside the kitchen you have everything that you'd look for – induction hob, oven, fridge-freezer, microwave, pots and pans, toaster, kettle, .... If you find anything missing then just let us know and we'll try to provide it.</p>
-    <p>Of course if the weather's good (which it normally is!) then you'll want to spend as much time as possible outside and so a charcoal barbecue is provided.</p>
+    <p>Of course if the weather's good (which it normally is!) then you'll want to spend as much time as possible outside, and so you have access to a gas barbecue.</p>
   `;
   
   const frenchAlt = "Grande table à manger, avec cuisine en arrière-plan";

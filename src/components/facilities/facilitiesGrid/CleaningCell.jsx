@@ -5,7 +5,7 @@ export default function CleaningCell({action}) {
     <h3>Cleaning</h3>
     <p>The apartment is cleaned between each tenant, and on each Tuesday.</p>
     <p>Clean bedding and towels are provided every week.</p>
-    </>);
+  </>);
 
   return (
     <InfoBox 
